@@ -68,7 +68,7 @@ export default function Presentation() {
   };
 
   return (
-    <div className="min-h-screen bg-[#000935] relative overflow-hidden">
+    <div className="min-h-[100dvh] bg-[#000935] relative overflow-hidden">
       <BackgroundCarousel />
 
       <AnimatePresence mode="wait">
@@ -78,10 +78,17 @@ export default function Presentation() {
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: -100 }}
           transition={{ duration: 0.4, ease: "easeInOut" }}
-          className="w-full h-screen relative z-10"
+          className="w-full h-[100dvh] relative z-10"
         >
           {isMobile ? (
-            <div className="absolute inset-x-0 top-0 bottom-20 overflow-y-auto">
+            <div
+              className="absolute inset-x-0 top-0 overflow-y-auto"
+              style={{
+                top: "calc(env(safe-area-inset-top, 0px) + 0.25rem)",
+                bottom: "calc(env(safe-area-inset-bottom, 0px) + 5.75rem)",
+                WebkitOverflowScrolling: "touch",
+              }}
+            >
               <MobilePresentation currentSlide={currentSlide} />
             </div>
           ) : (
@@ -93,7 +100,10 @@ export default function Presentation() {
       </AnimatePresence>
 
       {isMobile ? (
-        <div className="fixed bottom-4 left-1/2 z-50 flex w-[calc(100vw-1.5rem)] max-w-sm -translate-x-1/2 items-center justify-between gap-3 rounded-full border border-white/20 bg-white/10 px-3 py-2 backdrop-blur-md">
+        <div
+          className="fixed left-1/2 z-50 flex w-[calc(100vw-1.5rem)] max-w-sm -translate-x-1/2 items-center justify-between gap-3 rounded-full border border-white/20 bg-white/10 px-3 py-2 backdrop-blur-md"
+          style={{ bottom: "calc(env(safe-area-inset-bottom, 0px) + 0.75rem)" }}
+        >
           <button
             onClick={goToPrev}
             disabled={currentSlide === 1}

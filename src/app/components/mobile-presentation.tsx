@@ -22,6 +22,8 @@ import {
   slide21,
   slideDisclaimer,
 } from "../texts";
+import onusLogo from "../../assets/e7e41f04542fce7954ea5453ee29ba88235cf6cb.png";
+import cmrLogo from "../../assets/521a2b3343809a59638a95e5fc630218dcef6fe4.png";
 
 type MobileCard = {
   title?: string;
@@ -209,11 +211,25 @@ interface MobilePresentationProps {
 
 export default function MobilePresentation({ currentSlide }: MobilePresentationProps) {
   const slide = mobileSlides[currentSlide - 1] ?? mobileSlides[0];
+  const isCover = currentSlide === 1;
 
   return (
     <div className="mx-auto w-full max-w-md px-4 py-4">
       <section className="rounded-[28px] border border-white/15 bg-slate-950/60 p-5 shadow-2xl backdrop-blur-md">
         <div className="mb-5">
+          {isCover && (
+            <div className="mb-5 flex flex-col items-center gap-4">
+              <img src={onusLogo} alt="ONUS Logo" className="h-12 w-auto object-contain" />
+              <div className="flex items-center gap-3">
+                <div className="h-px w-10 bg-[rgb(var(--onus-turquoise-rgb))]/50" />
+                <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[rgb(var(--onus-turquoise-rgb))]/80">
+                  {slide1.separatorLabel}
+                </span>
+                <div className="h-px w-10 bg-[rgb(var(--onus-turquoise-rgb))]/50" />
+              </div>
+              <img src={cmrLogo} alt="CMR Group Logo" className="h-8 w-auto object-contain" />
+            </div>
+          )}
           <div className="mb-3 h-1.5 w-16 rounded-full bg-[rgb(var(--onus-turquoise-rgb))]" />
           {slide.badge && (
             <p className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-[rgb(var(--onus-turquoise-rgb))]">

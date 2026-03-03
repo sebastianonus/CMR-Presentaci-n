@@ -8,7 +8,7 @@
   --onus-turquoise-rgb: 0, 201, 206;
 
   /* Tema Claro */
-  --font-size: 16px;
+  --font-size: clamp(17px, 0.25vw + 16px, 18px);
   --background: 255, 255, 255;
   --foreground: 0, 9, 53;
   --card: 255, 255, 255;
@@ -90,6 +90,13 @@
 @layer base {
   * {
     @apply border-border outline-ring/50;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: 'Raleway', sans-serif;
   }
 
   body {

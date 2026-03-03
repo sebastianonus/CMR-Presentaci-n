@@ -1,9 +1,10 @@
 import { useNavigate, useParams } from "react-router";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import isologo from "../../assets/c6bba0f7d7742a6f216f288717b1e62f14e71b26.png";
 import BackgroundCarousel from "./background-carousel";
+import { useIsMobile } from "./ui/use-mobile";
 import Slide1 from "./slides/slide-1";
 import SlideDisclaimer from "./slides/slide-disclaimer";
 import Slide2 from "./slides/slide-2";
@@ -32,10 +33,15 @@ const slides = [
   Slide11, Slide12, Slide13, Slide14, Slide15, Slide16, Slide17, Slide18, Slide19, Slide20, Slide21
 ];
 
+const MOBILE_BASE_WIDTH = 1366;
+const MOBILE_BASE_HEIGHT = 768;
+
 export default function Presentation() {
   const { slideNumber } = useParams();
   const navigate = useNavigate();
+  const isMobile = useIsMobile();
   const currentSlide = slideNumber ? parseInt(slideNumber) : 1;
+  const [mobileScale, setMobileScale] = useState(1);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -49,6 +55,25 @@ export default function Presentation() {
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [currentSlide, navigate]);
+
+  useEffect(() => {
+    if (!isMobile) {
+      setMobileScale(1);
+      return;
+    }
+
+    const updateMobileScale = () => {
+      const safeWidth = Math.max(window.innerWidth - 24, 280);
+      const safeHeight = Math.max(window.innerHeight - 140, 220);
+      const widthScale = safeWidth / MOBILE_BASE_WIDTH;
+      const heightScale = safeHeight / MOBILE_BASE_HEIGHT;
+      setMobileScale(Math.min(widthScale, heightScale));
+    };
+
+    updateMobileScale();
+    window.addEventListener("resize", updateMobileScale);
+    return () => window.removeEventListener("resize", updateMobileScale);
+  }, [isMobile]);
 
   const CurrentSlideComponent = slides[currentSlide - 1];
 
@@ -66,7 +91,6 @@ export default function Presentation() {
 
   return (
     <div className="min-h-screen bg-[#000935] relative overflow-hidden">
-      {/* Background Carousel */}
       <BackgroundCarousel />
 
       <AnimatePresence mode="wait">
@@ -78,52 +102,114 @@ export default function Presentation() {
           transition={{ duration: 0.4, ease: "easeInOut" }}
           className="w-full h-screen relative z-10"
         >
-          <div className="absolute inset-x-0 top-0 bottom-24 overflow-hidden">
-            <CurrentSlideComponent />
-          </div>
+          {isMobile ? (
+            <div className="absolute inset-x-0 top-0 bottom-20 flex items-start justify-center overflow-hidden px-3 pt-3">
+              <div
+                className="relative"
+                style={{
+                  width: MOBILE_BASE_WIDTH * mobileScale,
+                  height: MOBILE_BASE_HEIGHT * mobileScale,
+                }}
+              >
+                <div
+                  className="absolute left-0 top-0 overflow-hidden rounded-2xl"
+                  style={{
+                    width: MOBILE_BASE_WIDTH,
+                    height: MOBILE_BASE_HEIGHT,
+                    transform: `scale(${mobileScale})`,
+                    transformOrigin: "top left",
+                  }}
+                >
+                  <CurrentSlideComponent />
+                </div>
+              </div>
+            </div>
+          ) : (
+            <div className="absolute inset-x-0 top-0 bottom-24 overflow-hidden">
+              <CurrentSlideComponent />
+            </div>
+          )}
         </motion.div>
       </AnimatePresence>
 
-      {/* Navigation Controls */}
-      <div className="fixed bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-4 bg-white/10 backdrop-blur-md px-6 py-3 rounded-full border border-white/20 z-50">
-        <button
-          onClick={goToPrev}
-          disabled={currentSlide === 1}
-          className="p-2 rounded-full bg-white/20 hover:bg-white/30 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
-        >
-          <ChevronLeft className="w-5 h-5 text-white" />
-        </button>
-        
-        <div className="flex items-center gap-2">
-          {slides.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => navigate(`/${index + 1}`)}
-              className={`h-2 rounded-full transition-all ${
-                currentSlide === index + 1
-                  ? "w-8 bg-[rgb(var(--onus-turquoise-rgb))]"
-                  : "w-2 bg-white/40 hover:bg-white/60"
-              }`}
-            />
-          ))}
+      {isMobile ? (
+        <div className="fixed bottom-4 left-1/2 z-50 flex w-[calc(100vw-1.5rem)] max-w-sm -translate-x-1/2 items-center justify-between gap-3 rounded-full border border-white/20 bg-white/10 px-3 py-2 backdrop-blur-md">
+          <button
+            onClick={goToPrev}
+            disabled={currentSlide === 1}
+            className="rounded-full bg-white/20 p-2 transition-all hover:bg-white/30 disabled:cursor-not-allowed disabled:opacity-30"
+          >
+            <ChevronLeft className="h-5 w-5 text-white" />
+          </button>
+
+          <div className="flex min-w-0 flex-1 items-center justify-center gap-1.5">
+            <span className="text-sm font-mono text-white/90">
+              {currentSlide} / {slides.length}
+            </span>
+            <div className="flex items-center gap-1">
+              {slides.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => navigate(`/${index + 1}`)}
+                  className={`h-1.5 rounded-full transition-all ${
+                    currentSlide === index + 1
+                      ? "w-5 bg-[rgb(var(--onus-turquoise-rgb))]"
+                      : "w-1.5 bg-white/40"
+                  }`}
+                />
+              ))}
+            </div>
+          </div>
+
+          <button
+            onClick={goToNext}
+            disabled={currentSlide === slides.length}
+            className="rounded-full bg-white/20 p-2 transition-all hover:bg-white/30 disabled:cursor-not-allowed disabled:opacity-30"
+          >
+            <ChevronRight className="h-5 w-5 text-white" />
+          </button>
         </div>
+      ) : (
+        <div className="fixed bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-4 bg-white/10 backdrop-blur-md px-6 py-3 rounded-full border border-white/20 z-50">
+          <button
+            onClick={goToPrev}
+            disabled={currentSlide === 1}
+            className="p-2 rounded-full bg-white/20 hover:bg-white/30 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
+          >
+            <ChevronLeft className="w-5 h-5 text-white" />
+          </button>
 
-        <button
-          onClick={goToNext}
-          disabled={currentSlide === slides.length}
-          className="p-2 rounded-full bg-white/20 hover:bg-white/30 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
-        >
-          <ChevronRight className="w-5 h-5 text-white" />
-        </button>
-      </div>
+          <div className="flex items-center gap-2">
+            {slides.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => navigate(`/${index + 1}`)}
+                className={`h-2 rounded-full transition-all ${
+                  currentSlide === index + 1
+                    ? "w-8 bg-[rgb(var(--onus-turquoise-rgb))]"
+                    : "w-2 bg-white/40 hover:bg-white/60"
+                }`}
+              />
+            ))}
+          </div>
 
-      {/* Slide Counter */}
-      <div className="fixed top-8 right-8 text-white/80 backdrop-blur-md bg-white/10 px-4 py-2 rounded-full border border-white/20 z-50">
-        <span className="font-mono">{currentSlide} / {slides.length}</span>
-      </div>
+          <button
+            onClick={goToNext}
+            disabled={currentSlide === slides.length}
+            className="p-2 rounded-full bg-white/20 hover:bg-white/30 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
+          >
+            <ChevronRight className="w-5 h-5 text-white" />
+          </button>
+        </div>
+      )}
 
-      {/* Isologo - visible en todas las slides excepto la primera */}
-      {currentSlide !== 1 && (
+      {!isMobile && (
+        <div className="fixed top-8 right-8 text-white/80 backdrop-blur-md bg-white/10 px-4 py-2 rounded-full border border-white/20 z-50">
+          <span className="font-mono">{currentSlide} / {slides.length}</span>
+        </div>
+      )}
+
+      {currentSlide !== 1 && !isMobile && (
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

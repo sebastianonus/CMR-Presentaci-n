@@ -1,9 +1,10 @@
 import { useNavigate, useParams } from "react-router";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import isologo from "../../assets/c6bba0f7d7742a6f216f288717b1e62f14e71b26.png";
 import BackgroundCarousel from "./background-carousel";
+import MobilePresentation from "./mobile-presentation";
 import { useIsMobile } from "./ui/use-mobile";
 import Slide1 from "./slides/slide-1";
 import SlideDisclaimer from "./slides/slide-disclaimer";
@@ -33,15 +34,11 @@ const slides = [
   Slide11, Slide12, Slide13, Slide14, Slide15, Slide16, Slide17, Slide18, Slide19, Slide20, Slide21
 ];
 
-const MOBILE_BASE_WIDTH = 1366;
-const MOBILE_BASE_HEIGHT = 768;
-
 export default function Presentation() {
   const { slideNumber } = useParams();
   const navigate = useNavigate();
   const isMobile = useIsMobile();
   const currentSlide = slideNumber ? parseInt(slideNumber) : 1;
-  const [mobileScale, setMobileScale] = useState(1);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -55,25 +52,6 @@ export default function Presentation() {
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [currentSlide, navigate]);
-
-  useEffect(() => {
-    if (!isMobile) {
-      setMobileScale(1);
-      return;
-    }
-
-    const updateMobileScale = () => {
-      const safeWidth = Math.max(window.innerWidth - 24, 280);
-      const safeHeight = Math.max(window.innerHeight - 140, 220);
-      const widthScale = safeWidth / MOBILE_BASE_WIDTH;
-      const heightScale = safeHeight / MOBILE_BASE_HEIGHT;
-      setMobileScale(Math.min(widthScale, heightScale));
-    };
-
-    updateMobileScale();
-    window.addEventListener("resize", updateMobileScale);
-    return () => window.removeEventListener("resize", updateMobileScale);
-  }, [isMobile]);
 
   const CurrentSlideComponent = slides[currentSlide - 1];
 
@@ -103,26 +81,8 @@ export default function Presentation() {
           className="w-full h-screen relative z-10"
         >
           {isMobile ? (
-            <div className="absolute inset-x-0 top-0 bottom-20 flex items-start justify-center overflow-hidden px-3 pt-3">
-              <div
-                className="relative"
-                style={{
-                  width: MOBILE_BASE_WIDTH * mobileScale,
-                  height: MOBILE_BASE_HEIGHT * mobileScale,
-                }}
-              >
-                <div
-                  className="absolute left-0 top-0 overflow-hidden rounded-2xl"
-                  style={{
-                    width: MOBILE_BASE_WIDTH,
-                    height: MOBILE_BASE_HEIGHT,
-                    transform: `scale(${mobileScale})`,
-                    transformOrigin: "top left",
-                  }}
-                >
-                  <CurrentSlideComponent />
-                </div>
-              </div>
+            <div className="absolute inset-x-0 top-0 bottom-20 overflow-y-auto">
+              <MobilePresentation currentSlide={currentSlide} />
             </div>
           ) : (
             <div className="absolute inset-x-0 top-0 bottom-24 overflow-hidden">
@@ -142,23 +102,10 @@ export default function Presentation() {
             <ChevronLeft className="h-5 w-5 text-white" />
           </button>
 
-          <div className="flex min-w-0 flex-1 items-center justify-center gap-1.5">
+          <div className="flex min-w-0 flex-1 items-center justify-center">
             <span className="text-sm font-mono text-white/90">
               {currentSlide} / {slides.length}
             </span>
-            <div className="flex items-center gap-1">
-              {slides.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => navigate(`/${index + 1}`)}
-                  className={`h-1.5 rounded-full transition-all ${
-                    currentSlide === index + 1
-                      ? "w-5 bg-[rgb(var(--onus-turquoise-rgb))]"
-                      : "w-1.5 bg-white/40"
-                  }`}
-                />
-              ))}
-            </div>
           </div>
 
           <button

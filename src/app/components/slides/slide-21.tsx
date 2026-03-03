@@ -3,7 +3,16 @@ import { Mail, Phone, Globe, MessageCircle } from "lucide-react";
 import logo from "../../../assets/e7e41f04542fce7954ea5453ee29ba88235cf6cb.png";
 import { slide21 } from "../../texts";
 
-const contactIcons = [Mail, Phone, Globe, MessageCircle];
+const contactItems = [
+  { label: "Correo", value: "vissler@onusexpress.com", href: "mailto:vissler@onusexpress.com", icon: Mail },
+  { label: "Telefono", value: "933 59 68 34", href: "tel:+34933596834", icon: Phone },
+  { label: "Web", value: "www.onusexpress.com", href: "https://www.onusexpress.com", icon: Globe },
+];
+
+const actionItems = [
+  { label: "Consulta", href: "https://www.onusexpress.com/contacto", icon: Globe },
+  { label: "WhatsApp", href: "https://wa.me/34639611115", icon: MessageCircle },
+];
 
 export default function Slide21() {
   return (
@@ -28,11 +37,17 @@ export default function Slide21() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl px-8 py-7 mb-6"
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-            {slide21.contact.map((item, i) => {
-              const Icon = contactIcons[i];
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {contactItems.map((item, i) => {
+              const Icon = item.icon;
               return (
-                <div key={i} className="flex items-center gap-4">
+                <a
+                  key={i}
+                  href={item.href}
+                  target={item.href.startsWith("http") ? "_blank" : undefined}
+                  rel={item.href.startsWith("http") ? "noreferrer" : undefined}
+                  className="flex items-center gap-4 rounded-2xl bg-white/5 px-4 py-4 transition-colors hover:bg-white/10"
+                >
                   <div className="bg-[rgb(var(--onus-turquoise-rgb))] p-3 rounded-xl">
                     <Icon className="w-6 h-6 text-white" />
                   </div>
@@ -40,7 +55,26 @@ export default function Slide21() {
                     <div className="text-xs md:text-sm text-white/70 mb-1">{item.label}</div>
                     <div className="text-base md:text-lg text-white">{item.value}</div>
                   </div>
-                </div>
+                </a>
+              );
+            })}
+          </div>
+
+          <div className="mt-5 flex flex-wrap gap-3">
+            {actionItems.map((item, i) => {
+              const Icon = item.icon;
+
+              return (
+                <a
+                  key={i}
+                  href={item.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full bg-[rgb(var(--onus-turquoise-rgb))] px-5 py-3 text-sm md:text-base font-semibold text-white transition-opacity hover:opacity-90"
+                >
+                  <Icon className="w-4 h-4 md:w-5 md:h-5" />
+                  <span>{item.label}</span>
+                </a>
               );
             })}
           </div>

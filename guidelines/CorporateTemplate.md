@@ -51,6 +51,58 @@ Documento base para mantener consistencia visual y narrativa en:
 - Margen lateral: `40px` a `56px`
 - Margen inferior: `32px` a `48px`
 
+## Resoluciones y Dispositivos
+
+- Disenar siempre para un rango, no para una sola pantalla.
+- Validar como minimo en portatil, monitor estandar y monitor amplio.
+- El contenido critico debe seguir legible sin zoom del navegador.
+- Nunca depender de que un monitor grande "salve" una composicion densa.
+
+## Breakpoints Recomendados
+
+- Mobile: hasta `767px`
+- Tablet: `768px` a `1023px`
+- Laptop: `1024px` a `1439px`
+- Desktop amplio: `1440px` en adelante
+
+## Reglas Responsive Para Presentaciones
+
+- En `mobile` y `tablet`, convertir bloques horizontales en pilas verticales.
+- En `laptop`, limitar a 2 columnas para contenido de negocio.
+- En `desktop amplio`, usar 3 o 4 columnas solo si cada bloque mantiene aire suficiente.
+- Reducir primero padding y numero de bloques antes que reducir demasiado la tipografia.
+- Los CTA, navegacion y contadores nunca deben tapar contenido.
+- El area inferior ocupada por navegacion debe considerarse siempre "espacio no util".
+
+## Densidad Segun Resolucion
+
+- Si una slide tiene mas de 3 capas visuales, simplificar.
+- Si hay 4 tarjetas o mas, comprobar que todas entren sin quedar cortadas en `1366x768`.
+- Las slides con cifras deben priorizar 2 a 4 datos clave.
+- Las slides con contacto o CTA deben usar reticulas simples y bloques uniformes.
+- Los textos largos deben partirse en varias lineas controladas o resumirse.
+
+## Pruebas Minimas de Validacion
+
+- `1366x768`: referencia minima para portatiles y validacion de altura.
+- `1440x900`: control general de composicion.
+- `1920x1080`: validacion de aire visual en monitor estandar.
+- `2560px` o superior: comprobar que el layout no quede demasiado disperso.
+
+## Reglas de Escalado
+
+- Usar escalado fluido moderado, no saltos agresivos de tamano.
+- Los titulos deben crecer menos que las cifras principales.
+- El cuerpo debe mantenerse estable y legible en todos los breakpoints.
+- Si una slide falla en altura, reducir paddings y gaps antes que el contraste.
+
+## Reglas de Reticula
+
+- Usar rejillas claras: `1`, `2` o `4` bloques.
+- Evitar filas "rotas" con elementos de anchos distintos si comparten jerarquia.
+- Los grupos de acciones deben ser uniformes en ancho, alto y alineacion.
+- Cuando un texto puede romper una tarjeta, usar una reticula de menos columnas.
+
 ## Estructura Base Para Presentaciones
 
 1. Portada con propuesta de valor clara.
@@ -124,6 +176,8 @@ Documento base para mantener consistencia visual y narrativa en:
 
 - Ningun bloque queda debajo de navegacion o footer.
 - Ningun titulo se corta en desktop.
+- Ninguna slide falla en `1366x768`.
+- Ninguna composicion depende de una sola resolucion.
 - Ninguna tarjeta compite por protagonismo con otra.
 - Ningun recurso grafico esta deformado.
 - Hay consistencia entre tipografia, colores y espaciados.

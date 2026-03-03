@@ -33,7 +33,7 @@ export default function Slide21() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl px-8 py-7 mb-6"
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {actionItems.map((item, i) => {
               const Icon = item.icon;
               return (
@@ -42,14 +42,14 @@ export default function Slide21() {
                   href={item.href}
                   target={item.href.startsWith("http") ? "_blank" : undefined}
                   rel={item.href.startsWith("http") ? "noreferrer" : undefined}
-                  className="flex items-center gap-4 rounded-2xl bg-white/5 px-4 py-4 transition-colors hover:bg-white/10"
+                  className="flex min-w-0 items-center gap-4 rounded-2xl bg-white/5 px-4 py-4 transition-colors hover:bg-white/10"
                 >
                   <div className="bg-[rgb(var(--onus-turquoise-rgb))] p-3 rounded-xl">
                     <Icon className="w-6 h-6 text-white" />
                   </div>
-                  <div>
+                  <div className="min-w-0 flex-1">
                     <div className="text-xs md:text-sm text-white/70 mb-1">{item.label}</div>
-                    <div className="text-base md:text-lg text-white">{item.value}</div>
+                    <div className="text-base md:text-lg text-white break-words leading-tight">{item.value}</div>
                   </div>
                 </a>
               );

@@ -78,7 +78,9 @@ export default function Presentation() {
           transition={{ duration: 0.4, ease: "easeInOut" }}
           className="w-full h-screen relative z-10"
         >
-          <CurrentSlideComponent />
+          <div className="absolute inset-x-0 top-0 bottom-24 overflow-hidden">
+            <CurrentSlideComponent />
+          </div>
         </motion.div>
       </AnimatePresence>
 

@@ -5,7 +5,7 @@ export function Slide20Start() {
     {
       icon: ClipboardCheck,
       step: '1',
-      title: 'Diagnóstico Ejecutivo',
+      title: 'Diagnostico Teorico',
       description: 'Análisis de tu operativa actual y oportunidades de mejora',
     },
     {

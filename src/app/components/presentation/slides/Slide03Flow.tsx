@@ -55,7 +55,7 @@ export function Slide03Flow() {
               </div>
               <div className="flex items-start gap-3">
                 <div className="w-2 h-2 rounded-full bg-[rgb(var(--onus-turquoise-rgb))] mt-2" />
-                <p className="text-foreground/80 font-medium">Telemetría activa 24/7</p>
+                <p className="text-foreground/80 font-medium">Visibilidad termica 24/7 en tiempo real</p>
               </div>
               <div className="flex items-start gap-3">
                 <div className="w-2 h-2 rounded-full bg-[rgb(var(--onus-turquoise-rgb))] mt-2" />

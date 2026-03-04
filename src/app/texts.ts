@@ -12,7 +12,7 @@ export const slide1 = {
 
 // --------------- SLIDE DISCLAIMER ---------------
 export const slideDisclaimer = {
-  badge: "Nota aclaratoria",
+  badge: "",
   title: "Propuesta DEMO para CMR Group",
   intro: "Esta propuesta es demostrativa y se ha elaborado con estimaciones basadas en información pública, benchmarks sectoriales y parámetros estándar de organizaciones comparables. No utiliza datos reales de CMR Group ni pretende reflejar su situación actual.",
   purposeTitle: "El objetivo es ilustrar una metodología de trabajo estructurada para:",
@@ -32,7 +32,7 @@ export const slideDisclaimer = {
 
 // --------------- SLIDE 2 ---------------
 export const slide2 = {
-  title: "Diagnóstico Ejecutivo",
+  title: "Diagnostico Teorico",
   visionTitle: "Visión",
   visionText:
     "La logística nacional impacta directamente en el margen y la vida útil de los productos. La operación es una palanca financiera, no solo un coste.",
@@ -67,7 +67,7 @@ export const slide3 = {
   onusTitle: "Arquitectura ONUS (Evolución)",
   onusItems: [
     "✓ Validación documental preventiva",
-    "✓ Telemetría activa 24/7",
+    "✓ Visibilidad termica 24/7 en tiempo real",
     "✓ Protocolos FEFO dinámicos",
     "✓ Análisis predictivo de riesgo",
   ],
@@ -239,7 +239,7 @@ export const slide11 = {
     "Rutas adaptadas a tus necesidades",
     "Apoyo en picos de demanda",
     "Control de calidad total",
-    "Monitorización de temperatura 24/7",
+    "Monitorizacion de temperatura 24/7",
   ],
   quote: '"Tu logística, como si fuera nuestra"',
 };
@@ -253,7 +253,7 @@ export const slide12 = {
   features: [
     {
       title: "Red de Autónomos",
-      desc: "Acceso a más de 1.200 autónomos verificados",
+      desc: "Acceso a mas de 3.200 autonomos cualificados, con documentacion actualizada y en regla",
     },
     {
       title: "Asignación Ágil 24/7",
@@ -266,6 +266,10 @@ export const slide12 = {
     {
       title: "Flota Propia",
       desc: "Complementaria para garantizar servicio",
+    },
+    {
+      title: "Sostenibilidad",
+      desc: "Green Path integrado como palanca de eficiencia sostenible",
     },
   ],
 };
@@ -291,8 +295,8 @@ export const slide13 = {
       desc: "KPIs estratégicos en tiempo real",
     },
   ],
-  footer: "Transforma tu logística en un",
-  footerBold: "activo estratégico",
+  footer: "Onus = cargo en latin = \"responsabilidad\" =",
+  footerBold: "ONUS SE HACE CARGO",
 };
 
 // --------------- SLIDE 14 ---------------
@@ -358,13 +362,15 @@ export const slide16 = {
 // --------------- SLIDE 17 ---------------
 export const slide17 = {
   title: "Diferencial ONUS",
-  quoteA: '"No optimizamos envíos."',
-  quoteB: "Optimizamos operaciones.",
+  quoteA: '"No optimizamos envios"',
+  quoteB: '"Optimizamos operaciones"',
   advantages: [
     { title: "Estructura de costes variables", desc: "Paga solo lo que necesitas" },
     { title: "Escalabilidad ante picos", desc: "Respuesta inmediata a demanda" },
     { title: "Procesos estandarizados", desc: "Calidad consistente" },
     { title: "Motor de rentabilidad", desc: "Logística que genera valor" },
+    { title: "ONUS App", desc: "Tecnologia IA para asignacion, control y decision" },
+    { title: "Sostenibilidad", desc: "Green Path como capa activa de eficiencia responsable" },
   ],
   cta: "Enfoque en convertir la logística en rentabilidad",
 };
@@ -397,7 +403,7 @@ export const slide18 = {
 
 // --------------- SLIDE 19 ---------------
 export const slide19 = {
-  title: "Plan de Implementación",
+  title: "Posible Plan de Implementacion",
   subtitle: "Roadmap estructurado para una transición sin fricciones",
   timeline: [
     {
@@ -451,7 +457,7 @@ export const slide20 = {
 
 // --------------- SLIDE 21 ---------------
 export const slide21 = {
-  title: "¿Hablamos?",
+  title: "",
   subtitle: "Transformemos juntos tu operación logística",
   contact: [
     { label: "Email", value: "info@onus.es" },
@@ -460,6 +466,6 @@ export const slide21 = {
     { label: "Consulta", value: "Contacto directo" },
   ],
   brand: "ONUS EXPRESS",
-  brandTagline: "Logística inteligente para operaciones exigentes",
+  brandTagline: "Nos Hacemos Cargo",
   closing: "Gracias por su atención",
 };

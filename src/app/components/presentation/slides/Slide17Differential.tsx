@@ -1,4 +1,4 @@
-import { Zap, DollarSign, TrendingUp, Target } from 'lucide-react';
+import { Zap, DollarSign, TrendingUp, Target, Bot, Leaf } from 'lucide-react';
 
 export function Slide17Differential() {
   return (
@@ -12,12 +12,10 @@ export function Slide17Differential() {
         <p className="text-4xl text-[rgb(var(--onus-turquoise-rgb))] font-bold italic mb-4">
           "No optimizamos envíos"
         </p>
-        <p className="text-5xl text-white font-bold">
-          Optimizamos operaciones
-        </p>
+        <p className="text-5xl text-white font-bold">"Optimizamos operaciones"</p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-6xl">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-6xl">
         <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20 text-center">
           <DollarSign className="w-12 h-12 text-[rgb(var(--onus-turquoise-rgb))] mx-auto mb-4" />
           <h3 className="text-xl font-semibold mb-2">Costes Variables</h3>
@@ -40,6 +38,18 @@ export function Slide17Differential() {
           <Target className="w-12 h-12 text-[rgb(var(--onus-turquoise-rgb))] mx-auto mb-4" />
           <h3 className="text-xl font-semibold mb-2">Enfoque</h3>
           <p className="text-white/70">Logística como rentabilidad</p>
+        </div>
+
+        <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20 text-center">
+          <Bot className="w-12 h-12 text-[rgb(var(--onus-turquoise-rgb))] mx-auto mb-4" />
+          <h3 className="text-xl font-semibold mb-2">ONUS App</h3>
+          <p className="text-white/70">Tecnologia IA para asignacion, control y decision</p>
+        </div>
+
+        <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20 text-center">
+          <Leaf className="w-12 h-12 text-[rgb(var(--onus-turquoise-rgb))] mx-auto mb-4" />
+          <h3 className="text-xl font-semibold mb-2">Sostenibilidad</h3>
+          <p className="text-white/70">Green Path como eficiencia operativa responsable</p>
         </div>
       </div>
 

@@ -36,7 +36,7 @@ export function Slide11Value() {
         <div className="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-white/10">
           <Eye className="w-12 h-12 text-[rgb(var(--onus-turquoise-rgb))] mb-4" />
           <h4 className="text-xl font-semibold mb-2">Control Total</h4>
-          <p className="text-white/70">Temperatura y calidad monitoreadas</p>
+          <p className="text-white/70">Monitorizacion de temperatura 24/7</p>
         </div>
       </div>
 

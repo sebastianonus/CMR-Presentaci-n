@@ -36,9 +36,7 @@ export function Slide21Closing() {
           ONUS EXPRESS
         </h2>
 
-        <p className="mt-8 text-white/60 text-lg">
-          Tu logística como ventaja competitiva
-        </p>
+        <p className="mt-8 text-white/60 text-lg">Nos Hacemos Cargo</p>
       </motion.div>
     </div>
   );

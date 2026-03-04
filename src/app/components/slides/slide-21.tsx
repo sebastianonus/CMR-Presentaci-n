@@ -23,7 +23,9 @@ export default function Slide21() {
           <div className="mb-5 flex justify-center">
             <img src={logo} alt="ONUS Logo" className="h-14 md:h-16" />
           </div>
-          <h1 className="text-4xl md:text-5xl mb-3 text-[rgb(var(--onus-turquoise-rgb))]">{slide21.title}</h1>
+          {slide21.title && (
+            <h1 className="text-4xl md:text-5xl mb-3 text-[rgb(var(--onus-turquoise-rgb))]">{slide21.title}</h1>
+          )}
           <p className="text-lg md:text-xl text-white/90">{slide21.subtitle}</p>
         </motion.div>
 

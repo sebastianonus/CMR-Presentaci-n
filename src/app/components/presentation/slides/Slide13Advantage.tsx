@@ -50,9 +50,9 @@ export function Slide13Advantage() {
 
       <div className="mt-8 bg-gradient-to-r from-[rgb(var(--onus-dark-blue-rgb))] to-[rgb(var(--onus-dark-blue-rgb))]/80 p-8 rounded-2xl">
         <p className="text-white text-2xl text-center">
-          <strong className="text-[rgb(var(--onus-turquoise-rgb))]">Ventaja estructural sostenible:</strong> 
+          <strong className="text-[rgb(var(--onus-turquoise-rgb))]">Onus = cargo en latin = "responsabilidad"</strong>
           <br />
-          No es solo mejorar la logística, es convertirla en tu diferenciador
+          ONUS SE HACE CARGO
         </p>
       </div>
     </div>

@@ -50,11 +50,11 @@ export function PresentationLayout({ children, totalSlides }: PresentationLayout
       </main>
 
       {/* Navigation Controls */}
-      <div className="fixed bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-4 bg-card/95 backdrop-blur-sm px-6 py-3 rounded-full shadow-lg border border-border">
+      <div className="fixed bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-4 bg-card/95 px-5 py-2 rounded-xl border border-border">
         <button
           onClick={prevSlide}
           disabled={currentSlide === 1}
-          className="p-2 rounded-full hover:bg-accent disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+          className="px-3 py-2 rounded-lg border border-border bg-transparent hover:bg-accent/40 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
           aria-label="Anterior"
         >
           <ChevronLeft className="w-5 h-5" />
@@ -78,7 +78,7 @@ export function PresentationLayout({ children, totalSlides }: PresentationLayout
         <button
           onClick={nextSlide}
           disabled={currentSlide === totalSlides}
-          className="p-2 rounded-full hover:bg-accent disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+          className="px-3 py-2 rounded-lg border border-border bg-transparent hover:bg-accent/40 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
           aria-label="Siguiente"
         >
           <ChevronRight className="w-5 h-5" />

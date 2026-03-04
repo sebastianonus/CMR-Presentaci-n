@@ -20,7 +20,7 @@ export function Slide02Diagnostic() {
     <div className="h-[calc(100vh-12rem)] flex flex-col p-12 bg-card rounded-3xl shadow-xl">
       <div className="mb-8">
         <h1 className="text-5xl mb-4 text-[rgb(var(--onus-dark-blue-rgb))]" style={{ fontFamily: 'Raleway, sans-serif' }}>
-          Diagnóstico Ejecutivo
+          Diagnostico Teorico
         </h1>
         <div className="w-24 h-1 bg-[rgb(var(--onus-turquoise-rgb))] rounded-full" />
       </div>

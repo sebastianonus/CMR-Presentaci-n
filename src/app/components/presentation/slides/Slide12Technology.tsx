@@ -1,4 +1,5 @@
 import { Smartphone, Users, Zap, Truck, Bot } from 'lucide-react';
+import greenPathLogo from '../../../../assets/Greenpath_Logo_Logistics_VerdeLima.png';
 
 export function Slide12Technology() {
   return (
@@ -17,7 +18,7 @@ export function Slide12Technology() {
             <h2 className="text-2xl text-[rgb(var(--onus-dark-blue-rgb))] font-semibold">Plataforma Tecnológica</h2>
           </div>
           
-          <div className="space-y-6">
+          <div className="space-y-5">
             <div className="flex items-start gap-4">
               <Bot className="w-8 h-8 text-[rgb(var(--onus-turquoise-rgb))] flex-shrink-0 mt-1" />
               <div>
@@ -43,8 +44,8 @@ export function Slide12Technology() {
             <div className="bg-white/50 dark:bg-black/20 p-5 rounded-xl flex items-center gap-4">
               <Users className="w-10 h-10 text-[rgb(var(--onus-turquoise-rgb))]" />
               <div>
-                <p className="text-3xl font-bold text-[rgb(var(--onus-turquoise-rgb))]">+1.200</p>
-                <p className="text-sm text-foreground/70">Autónomos verificados</p>
+                <p className="text-3xl font-bold text-[rgb(var(--onus-turquoise-rgb))]">+3.200</p>
+                <p className="text-sm text-foreground/70">Autonomos cualificados, con documentacion actualizada y en regla</p>
               </div>
             </div>
 
@@ -63,6 +64,16 @@ export function Slide12Technology() {
               <div>
                 <h4 className="font-semibold mb-1">Flota Propia Complementaria</h4>
                 <p className="text-foreground/70 text-sm">Para máxima fiabilidad</p>
+              </div>
+            </div>
+
+            <div className="bg-white/50 dark:bg-black/20 p-5 rounded-xl flex items-center gap-4">
+              <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-[#234635]">
+                <img src={greenPathLogo} alt="Green Path Logistics" className="h-full w-full object-contain p-1" />
+              </div>
+              <div className="min-w-0 flex-1">
+                <h4 className="font-semibold mb-1">Sostenibilidad</h4>
+                <p className="text-foreground/70 text-sm">Green Path Logistics como capa activa de eficiencia sostenible</p>
               </div>
             </div>
           </div>

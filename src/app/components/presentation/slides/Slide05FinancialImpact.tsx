@@ -1,4 +1,4 @@
-import { TrendingDown, AlertOff, Target, DollarSign } from 'lucide-react';
+import { TrendingDown, AlertTriangle, Target, DollarSign } from 'lucide-react';
 
 export function Slide05FinancialImpact() {
   const levers = [
@@ -9,7 +9,7 @@ export function Slide05FinancialImpact() {
       color: 'rgb(var(--onus-turquoise-rgb))',
     },
     {
-      icon: AlertOff,
+      icon: AlertTriangle,
       title: 'Disminución de Reclamaciones',
       value: '15% - 25%',
       color: 'rgb(var(--onus-turquoise-rgb))',

@@ -36,20 +36,24 @@ export function Slide18Business() {
       <p className="text-2xl text-foreground/80 mb-8">Valor real para CMR Group:</p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 flex-1">
-        {impacts.map((impact, index) => (
-          <div 
-            key={index}
-            className="bg-gradient-to-br from-[rgb(var(--onus-turquoise-rgb))]/5 to-transparent p-8 rounded-2xl border-2 border-[rgb(var(--onus-turquoise-rgb))]/20 hover:border-[rgb(var(--onus-turquoise-rgb))] transition-all hover:shadow-xl flex flex-col"
-          >
-            <div className="flex items-center gap-4 mb-4">
-              <div className="w-16 h-16 bg-[rgb(var(--onus-turquoise-rgb))]/20 rounded-2xl flex items-center justify-center flex-shrink-0">
-                <impact.icon className="w-9 h-9 text-[rgb(var(--onus-turquoise-rgb))]" />
+        {impacts.map((impact, index) => {
+          const Icon = impact.icon;
+
+          return (
+            <div
+              key={index}
+              className="bg-gradient-to-br from-[rgb(var(--onus-turquoise-rgb))]/5 to-transparent p-8 rounded-2xl border-2 border-[rgb(var(--onus-turquoise-rgb))]/20 hover:border-[rgb(var(--onus-turquoise-rgb))] transition-all hover:shadow-xl flex flex-col"
+            >
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-16 h-16 bg-[rgb(var(--onus-turquoise-rgb))]/20 rounded-2xl flex items-center justify-center flex-shrink-0">
+                  <Icon className="w-9 h-9 text-[rgb(var(--onus-turquoise-rgb))]" />
+                </div>
+                <h3 className="text-2xl font-semibold text-[rgb(var(--onus-dark-blue-rgb))]">{impact.title}</h3>
               </div>
-              <h3 className="text-2xl font-semibold text-[rgb(var(--onus-dark-blue-rgb))]">{impact.title}</h3>
+              <p className="text-foreground/70 text-lg">{impact.description}</p>
             </div>
-            <p className="text-foreground/70 text-lg">{impact.description}</p>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
       <div className="mt-8 bg-gradient-to-r from-[rgb(var(--onus-dark-blue-rgb))] to-[rgb(var(--onus-dark-blue-rgb))]/80 p-8 rounded-2xl text-center">

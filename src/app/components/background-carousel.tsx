@@ -1,17 +1,35 @@
 import { useState, useEffect } from "react";
 import { motion } from "motion/react";
-import img2 from "../../assets/75a4f1c6db6f262602b59fe34d37008c74077a3f.png";
-import img3 from "../../assets/e4d65246763c398c8158c537a32f609404b085bd.png";
-import img4 from "../../assets/4261f3db5c66ef3456a8ebcae9838917a1e10ea5.png";
-import img6 from "../../assets/0a1757e638ab1fb53c0032b34a92c151833d26de.png";
-import img7 from "../../assets/433f006a1a8dbb744643830e0e0b3f07184d05b1.png";
 
-const images = [img2, img3, img4, img6, img7];
+const excludedAssets = [
+  "521a2b3343809a59638a95e5fc630218dcef6fe4", // CMR logo
+  "c6bba0f7d7742a6f216f288717b1e62f14e71b26", // ONUS isologo
+  "e7e41f04542fce7954ea5453ee29ba88235cf6cb", // ONUS logo
+  "Greenpath_Logo_Logistics_VerdeLima", // Green Path logo
+];
+
+const assetModules = import.meta.glob("../../assets/*", {
+  eager: true,
+  import: "default",
+}) as Record<string, string>;
+
+const images = Object.entries(assetModules)
+  .filter(([assetPath]) => {
+    const isImage = /\.(png|jpe?g|webp|avif)$/i.test(assetPath);
+    const isExcluded = excludedAssets.some((excluded) => assetPath.includes(excluded));
+    return isImage && !isExcluded;
+  })
+  .sort(([a], [b]) => a.localeCompare(b))
+  .map(([, assetUrl]) => assetUrl);
 
 export default function BackgroundCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
+    if (images.length <= 1) {
+      return undefined;
+    }
+
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % images.length);
     }, 10000); // Cambia cada 10 segundos

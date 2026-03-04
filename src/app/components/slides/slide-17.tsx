@@ -1,8 +1,8 @@
 import { motion } from "motion/react";
-import { Zap, TrendingUp, Layers, Target } from "lucide-react";
+import { Zap, TrendingUp, Layers, Target, Bot, Leaf } from "lucide-react";
 import { slide17 } from "../../texts";
 
-const advIcons = [Zap, Layers, Target, TrendingUp];
+const advIcons = [Zap, Layers, Target, TrendingUp, Bot, Leaf];
 
 export default function Slide17() {
   return (
@@ -27,9 +27,9 @@ export default function Slide17() {
           <p className="text-3xl md:text-4xl text-[rgb(var(--onus-turquoise-rgb))]">{slide17.quoteB}</p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
           {slide17.advantages.map((adv, index) => {
-            const Icon = advIcons[index];
+            const Icon = advIcons[index] ?? Zap;
             return (
               <motion.div
                 key={index}

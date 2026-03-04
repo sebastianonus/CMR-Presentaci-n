@@ -1,11 +1,13 @@
 import { motion } from "motion/react";
 import { Smartphone, Brain, Users, Map, Zap, Truck } from "lucide-react";
+import greenPathLogo from "../../../assets/Greenpath_Logo_Logistics_VerdeLima.png";
 import { slide12 } from "../../texts";
 
 const featureIcons = [Users, Zap, Map, Truck];
 const featureStyles = [
   "bg-white/10 backdrop-blur-md border border-white/20",
   "bg-[rgb(var(--onus-turquoise-rgb))]/15 backdrop-blur-md",
+  "bg-white/10 backdrop-blur-md border border-white/20",
   "bg-white/10 backdrop-blur-md border border-white/20",
   "bg-white/10 backdrop-blur-md border border-white/20",
 ];
@@ -48,10 +50,19 @@ export default function Slide12() {
           >
             {slide12.features.map((feat, i) => {
               const Icon = featureIcons[i];
+              const isSustainability = feat.title === "Sostenibilidad";
+              const styleClass = featureStyles[i] ?? featureStyles[featureStyles.length - 1];
+
               return (
-                <div key={i} className={`${featureStyles[i]} rounded-xl p-6`}>
+                <div key={i} className={`${styleClass} rounded-xl p-6`}>
                   <div className="flex items-center gap-3 mb-2">
-                    <Icon className="w-6 h-6 text-[rgb(var(--onus-turquoise-rgb))]" />
+                    {isSustainability ? (
+                      <div className="flex h-9 w-9 items-center justify-center overflow-hidden rounded-lg bg-[#234635]">
+                        <img src={greenPathLogo} alt="Green Path Logistics" className="h-full w-full object-contain p-0.5" />
+                      </div>
+                    ) : (
+                      Icon && <Icon className="w-6 h-6 text-[rgb(var(--onus-turquoise-rgb))]" />
+                    )}
                     <h4 className="text-xl text-white">{feat.title}</h4>
                   </div>
                   <p className="text-white/80">{feat.desc}</p>

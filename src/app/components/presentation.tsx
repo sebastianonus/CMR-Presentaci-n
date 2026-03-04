@@ -38,7 +38,8 @@ export default function Presentation() {
   const { slideNumber } = useParams();
   const navigate = useNavigate();
   const isMobile = useIsMobile();
-  const currentSlide = slideNumber ? parseInt(slideNumber) : 1;
+  const parsedSlide = slideNumber ? parseInt(slideNumber, 10) : 1;
+  const currentSlide = Number.isFinite(parsedSlide) && parsedSlide >= 1 && parsedSlide <= slides.length ? parsedSlide : 1;
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -53,7 +54,7 @@ export default function Presentation() {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [currentSlide, navigate]);
 
-  const CurrentSlideComponent = slides[currentSlide - 1];
+  const CurrentSlideComponent = slides[currentSlide - 1] ?? Slide1;
 
   const goToNext = () => {
     if (currentSlide < slides.length) {

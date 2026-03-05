@@ -38,7 +38,7 @@ export default function Slide15() {
                 className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8"
               >
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="bg-[rgb(var(--onus-turquoise-rgb))] p-4 rounded-xl">
+                  <div className="glass-chip-neutral p-4 rounded-xl">
                     <Icon className="w-8 h-8 text-white" />
                   </div>
                   <div className="text-3xl text-white/50">0{index + 1}</div>
@@ -54,7 +54,7 @@ export default function Slide15() {
           initial={{ y: 30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.8 }}
-          className="mt-12 bg-[rgb(var(--onus-turquoise-rgb))] rounded-2xl p-8 text-center"
+          className="glass-surface-accent mt-12 rounded-2xl p-8 text-center"
         >
           <p className="text-2xl text-white">
             {slide15.footer} <span className="font-bold">{slide15.footerBold}</span>

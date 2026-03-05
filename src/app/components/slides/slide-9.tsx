@@ -108,7 +108,7 @@ export default function Slide9() {
               </div>
             </div>
 
-            <div className="bg-[rgb(var(--onus-turquoise-rgb))] rounded-xl p-4 text-center">
+            <div className="glass-surface-accent rounded-xl p-4 text-center">
               <div className="text-sm text-white/90 mb-2">{slide9.totalImpactLabel}</div>
               <div className="text-3xl md:text-4xl text-white mb-1.5">{formatNumber(totalSavings)} EUR</div>
               <div className="text-sm md:text-base text-white/90">{slide9.totalImpactSub}</div>

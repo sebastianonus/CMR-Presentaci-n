@@ -34,7 +34,7 @@ export default function Slide4() {
                 return (
                   <div key={i} className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6">
                     <div className="flex items-start gap-4">
-                      <div className="bg-[rgb(var(--onus-turquoise-rgb))] p-3 rounded-lg">
+                      <div className="glass-chip-neutral p-3 rounded-lg">
                         <Icon className="w-6 h-6 text-white" />
                       </div>
                       <div>

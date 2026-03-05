@@ -44,7 +44,7 @@ export default function Slide2() {
                   transition={{ duration: 0.5, delay: 0.6 + index * 0.15 }}
                   className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 flex items-start gap-4 hover:bg-white/10 transition-all"
                 >
-                  <div className="bg-[rgb(var(--onus-turquoise-rgb))] p-3 rounded-lg flex-shrink-0">
+                  <div className="glass-chip-neutral p-3 rounded-lg flex-shrink-0">
                     <Icon className="w-6 h-6 text-white" />
                   </div>
                   <p className="text-white/90 leading-relaxed">{fact.text}</p>
@@ -58,7 +58,7 @@ export default function Slide2() {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 1.2 }}
-          className="mt-8 bg-[rgb(var(--onus-turquoise-rgb))] rounded-xl p-6"
+          className="glass-surface-accent mt-8 rounded-xl p-6"
         >
           <p className="text-xl text-white">
             <strong>{slide2.implicationPrefix}</strong> {slide2.implication}

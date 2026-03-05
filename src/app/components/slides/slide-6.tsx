@@ -51,7 +51,7 @@ export default function Slide6() {
           initial={{ y: 30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.8 }}
-          className="mt-12 bg-[rgb(var(--onus-turquoise-rgb))] rounded-2xl p-8 text-center"
+          className="glass-surface-accent mt-12 rounded-2xl p-8 text-center"
         >
           <p className="text-2xl text-white">
             {slide6.footer} <span className="font-bold">{slide6.footerBold}</span>

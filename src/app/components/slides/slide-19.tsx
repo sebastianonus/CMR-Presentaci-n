@@ -36,7 +36,7 @@ export default function Slide19() {
             >
               {/* Cabecera fase */}
               <div className="flex items-center gap-3 mb-4">
-                <div className="bg-[rgb(var(--onus-turquoise-rgb))] w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0">
+                <div className="glass-chip-neutral w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0">
                   <span className="text-lg text-white font-bold">{index + 1}</span>
                 </div>
                 <div>
@@ -69,7 +69,7 @@ export default function Slide19() {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.9 }}
-          className="bg-[rgb(var(--onus-turquoise-rgb))] rounded-2xl p-5 text-center flex items-center justify-center gap-3"
+          className="glass-surface-accent rounded-2xl p-5 text-center flex items-center justify-center gap-3"
         >
           <Rocket className="w-7 h-7 text-white" />
           <p className="text-lg text-white">

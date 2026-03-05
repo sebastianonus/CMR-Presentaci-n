@@ -280,7 +280,7 @@ export default function MobilePresentation({ currentSlide }: MobilePresentationP
         )}
 
         {slide.callout && (
-          <div className="rounded-2xl bg-[rgb(var(--onus-turquoise-rgb))] px-4 py-3">
+          <div className="glass-surface-accent rounded-2xl px-4 py-3">
             <p className="text-sm font-semibold leading-relaxed text-white">{slide.callout}</p>
           </div>
         )}

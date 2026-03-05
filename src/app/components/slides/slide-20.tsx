@@ -55,7 +55,7 @@ export default function Slide20() {
           initial={{ y: 30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.8 }}
-          className="bg-[rgb(var(--onus-turquoise-rgb))] rounded-2xl px-8 py-6 text-center"
+          className="glass-surface-accent rounded-2xl px-8 py-6 text-center"
         >
           <p className="text-2xl md:text-3xl text-white mb-3">{slide20.ctaTitle}</p>
           <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm md:text-base text-white/90">

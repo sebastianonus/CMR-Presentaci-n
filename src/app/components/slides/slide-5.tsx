@@ -55,7 +55,7 @@ export default function Slide5() {
           className="bg-[rgb(var(--onus-turquoise-rgb))]/15 backdrop-blur-md border border-[rgb(var(--onus-turquoise-rgb))]/30 rounded-2xl p-8"
         >
           <div className="flex items-center gap-4 mb-6">
-            <div className="bg-[rgb(var(--onus-turquoise-rgb))] p-3 rounded-lg">
+            <div className="glass-chip-neutral p-3 rounded-lg">
               <Euro className="w-8 h-8 text-white" />
             </div>
             <h3 className="text-3xl text-white">{slide5.effectTitle}</h3>

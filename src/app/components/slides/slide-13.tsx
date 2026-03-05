@@ -28,7 +28,7 @@ export default function Slide13() {
                 transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
                 className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8 hover:bg-white/15 transition-all"
               >
-                <div className="bg-[rgb(var(--onus-turquoise-rgb))] p-4 rounded-xl w-fit mb-6">
+                <div className="glass-chip-neutral p-4 rounded-xl w-fit mb-6">
                   <Icon className="w-10 h-10 text-white" />
                 </div>
                 <h3 className="text-2xl mb-3 text-white">{benefit.title}</h3>
@@ -42,7 +42,7 @@ export default function Slide13() {
           initial={{ y: 30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.8 }}
-          className="mt-12 bg-[rgb(var(--onus-turquoise-rgb))] rounded-2xl p-8 text-center"
+          className="glass-surface-accent mt-12 rounded-2xl p-8 text-center"
         >
           <p className="text-3xl text-white">
             {slide13.footer} <span className="font-bold">{slide13.footerBold}</span>

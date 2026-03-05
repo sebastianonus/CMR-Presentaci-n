@@ -71,7 +71,7 @@ export default function Slide3() {
           transition={{ duration: 0.6, delay: 0.8 }}
           className="mt-8 flex justify-center"
         >
-          <div className="inline-flex items-center gap-3 bg-[rgb(var(--onus-turquoise-rgb))] text-white px-6 py-3 rounded-full">
+          <div className="glass-surface-accent inline-flex items-center gap-3 text-white px-6 py-3 rounded-full">
             <span>{slide3.cta}</span>
             <ArrowRight className="w-5 h-5" />
           </div>

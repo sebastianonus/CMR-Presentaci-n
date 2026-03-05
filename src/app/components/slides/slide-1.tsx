@@ -37,7 +37,7 @@ export default function Slide1() {
           initial={{ y: 30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.8 }}
-          className="inline-block bg-[rgb(var(--onus-turquoise-rgb))] text-white px-8 py-4 rounded-full text-xl"
+          className="glass-surface-accent inline-block text-white px-8 py-4 rounded-full text-xl"
         >
           {slide1.cta}
         </motion.div>

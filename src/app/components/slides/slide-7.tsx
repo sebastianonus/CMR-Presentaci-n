@@ -50,7 +50,7 @@ export default function Slide7() {
           transition={{ duration: 0.6, delay: 0.8 }}
           className="mt-12 text-center"
         >
-          <div className="inline-block bg-[rgb(var(--onus-turquoise-rgb))] text-white px-8 py-4 rounded-full text-xl">
+          <div className="glass-surface-accent inline-block text-white px-8 py-4 rounded-full text-xl">
             {slide7.cta}
           </div>
         </motion.div>

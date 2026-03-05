@@ -66,7 +66,7 @@ export default function Slide8() {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="bg-[rgb(var(--onus-turquoise-rgb))] rounded-2xl px-6 py-5 text-center"
+          className="glass-surface-accent rounded-2xl px-6 py-5 text-center"
         >
           <div className="flex items-center justify-center gap-3 mb-3">
             <TrendingUp className="w-9 h-9 text-white" />

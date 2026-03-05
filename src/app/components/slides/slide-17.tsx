@@ -21,7 +21,7 @@ export default function Slide17() {
           initial={{ scale: 0.9, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="bg-[rgb(var(--onus-turquoise-rgb))]/15 backdrop-blur-md border border-[rgb(var(--onus-turquoise-rgb))]/30 rounded-3xl px-6 py-5 mb-5 text-center"
+          className="glass-surface-accent rounded-3xl px-6 py-5 mb-5 text-center"
         >
           <p className="text-2xl md:text-3xl text-white italic mb-2">{slide17.quoteA}</p>
           <p className="text-3xl md:text-4xl text-[rgb(var(--onus-turquoise-rgb))]">{slide17.quoteB}</p>
@@ -38,7 +38,7 @@ export default function Slide17() {
                 transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
                 className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl px-5 py-4 hover:scale-[1.01] transition-transform"
               >
-                <div className="bg-[rgb(var(--onus-turquoise-rgb))] p-3 rounded-xl w-fit mb-3">
+                <div className="glass-chip-neutral p-3 rounded-xl w-fit mb-3">
                   <Icon className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="text-lg md:text-xl mb-2 text-white">{adv.title}</h3>
@@ -54,7 +54,7 @@ export default function Slide17() {
           transition={{ duration: 0.6, delay: 0.9 }}
           className="mt-5 text-center"
         >
-          <div className="inline-block bg-[rgb(var(--onus-turquoise-rgb))] text-white px-6 py-3 rounded-full text-base md:text-lg">
+          <div className="glass-surface-neutral inline-block text-white px-6 py-3 rounded-full text-base md:text-lg">
             {slide17.cta}
           </div>
         </motion.div>

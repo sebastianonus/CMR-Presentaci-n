@@ -46,7 +46,7 @@ export default function Slide21() {
                   rel={item.href.startsWith("http") ? "noreferrer" : undefined}
                   className="flex min-w-0 items-center gap-4 rounded-2xl bg-white/5 px-4 py-4 transition-colors hover:bg-white/10"
                 >
-                  <div className="bg-[rgb(var(--onus-turquoise-rgb))] p-3 rounded-xl">
+                  <div className="glass-chip-neutral p-3 rounded-xl">
                     <Icon className="w-6 h-6 text-white" />
                   </div>
                   <div className="min-w-0 flex-1">
@@ -63,7 +63,7 @@ export default function Slide21() {
           initial={{ y: 30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="bg-[rgb(var(--onus-turquoise-rgb))] rounded-2xl px-7 py-5 text-center"
+          className="glass-surface-accent rounded-2xl px-7 py-5 text-center"
         >
           <p className="text-xl md:text-2xl text-white mb-2 font-bold">{slide21.brand}</p>
           <p className="text-base md:text-lg text-white/90">{slide21.brandTagline}</p>

@@ -37,7 +37,7 @@ export default function Slide18() {
                 transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
                 className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl px-5 py-4 hover:scale-[1.01] transition-transform"
               >
-                <div className="bg-[rgb(var(--onus-turquoise-rgb))] p-2.5 rounded-xl w-fit mb-2.5">
+                <div className="glass-chip-neutral p-2.5 rounded-xl w-fit mb-2.5">
                   <Icon className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="text-base md:text-lg mb-1.5 text-white">{service.title}</h3>
@@ -51,7 +51,7 @@ export default function Slide18() {
           initial={{ y: 30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.8 }}
-          className="mt-5 bg-[rgb(var(--onus-turquoise-rgb))] rounded-2xl px-6 py-4 text-center"
+          className="glass-surface-accent mt-5 rounded-2xl px-6 py-4 text-center"
         >
           <p className="text-base md:text-lg text-white">
             <span className="font-bold">{slide18.footerBold}</span> {slide18.footer}

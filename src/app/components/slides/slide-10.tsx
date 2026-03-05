@@ -28,7 +28,7 @@ export default function Slide10() {
                 transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
                 className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 hover:bg-white/15 transition-all group"
               >
-                <div className="bg-[rgb(var(--onus-turquoise-rgb))] p-4 rounded-xl w-fit mb-4 group-hover:scale-110 transition-transform">
+                <div className="glass-chip-neutral p-4 rounded-xl w-fit mb-4 group-hover:scale-110 transition-transform">
                   <Icon className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl mb-2 text-white">{kpi.title}</h3>

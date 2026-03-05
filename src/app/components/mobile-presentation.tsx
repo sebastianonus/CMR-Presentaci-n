@@ -199,7 +199,7 @@ const mobileSlides: MobileSlide[] = [
       { title: "Correo", description: "vissler@onusexpress.com" },
       { title: "Web", description: "www.onusexpress.com" },
       { title: "Consulta", description: "Formulario de contacto" },
-      { title: "WhatsApp", description: "+34 639 61 11 15" },
+      { title: "WhatsApp", description: "647726628" },
     ],
     callout: "ONUS EXPRESS",
   },

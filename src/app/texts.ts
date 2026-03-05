@@ -461,7 +461,7 @@ export const slide21 = {
   subtitle: "Transformemos juntos tu operación logística",
   contact: [
     { label: "Email", value: "info@onus.es" },
-    { label: "Teléfono", value: "+34 900 000 000" },
+    { label: "Teléfono", value: "647726628" },
     { label: "Web", value: "www.onus.es" },
     { label: "Consulta", value: "Contacto directo" },
   ],

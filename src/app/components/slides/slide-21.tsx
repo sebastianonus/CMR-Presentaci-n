@@ -7,7 +7,7 @@ const actionItems = [
   { label: "Correo", value: "vissler@onusexpress.com", href: "mailto:vissler@onusexpress.com", icon: Mail },
   { label: "Web", value: "www.onusexpress.com", href: "https://www.onusexpress.com", icon: Globe },
   { label: "Consulta", value: "Formulario", href: "https://www.onusexpress.com/contacto", icon: Phone },
-  { label: "WhatsApp", value: "+34 639 61 11 15", href: "https://wa.me/34639611115", icon: MessageCircle },
+  { label: "WhatsApp", value: "647726628", href: "https://wa.me/34647726628", icon: MessageCircle },
 ];
 
 export default function Slide21() {

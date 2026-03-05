@@ -43,7 +43,7 @@ export default function BackgroundCarousel() {
         <motion.div
           key={index}
           initial={{ opacity: 0 }}
-          animate={{ opacity: currentIndex === index ? 0.3 : 0 }}
+          animate={{ opacity: currentIndex === index ? 0.4 : 0 }}
           transition={{ duration: 2, ease: "easeInOut" }}
           className="absolute inset-0"
         >
@@ -54,7 +54,7 @@ export default function BackgroundCarousel() {
           />
         </motion.div>
       ))}
-      <div className="absolute inset-0 bg-[#000935]/70" />
+      <div className="absolute inset-0 bg-[#000935]/60" />
     </div>
   );
 }

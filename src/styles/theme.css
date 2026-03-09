@@ -182,35 +182,46 @@ html {
 }
 
 @layer components {
-  .desktop-presentation-scroll {
-    scrollbar-width: thin;
-    scrollbar-color: rgba(0, 201, 206, 0.45) transparent;
+  .desktop-presentation-shell {
+    overflow: hidden;
   }
 
-  /* Desktop/tablet safe area: avoid top clipping when slide content grows */
-  .desktop-slide-safe-area > div[class*="h-full"] {
-    height: auto !important;
-    min-height: 100%;
-  }
+  @media (max-height: 820px) {
+    .desktop-presentation-shell {
+      overflow-y: auto;
+      overflow-x: hidden;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(0, 201, 206, 0.45) transparent;
+    }
 
-  .desktop-slide-safe-area > div[class*="justify-center"] {
-    justify-content: flex-start !important;
-    padding-top: clamp(0.25rem, 1.1vh, 0.75rem);
-    padding-bottom: clamp(0.75rem, 1.8vh, 1.25rem);
-  }
+    .desktop-presentation-shell::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
 
-  .desktop-presentation-scroll::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-  }
+    .desktop-presentation-shell::-webkit-scrollbar-thumb {
+      background: rgba(0, 201, 206, 0.4);
+      border-radius: 9999px;
+    }
 
-  .desktop-presentation-scroll::-webkit-scrollbar-thumb {
-    background: rgba(0, 201, 206, 0.4);
-    border-radius: 9999px;
-  }
+    .desktop-presentation-shell::-webkit-scrollbar-track {
+      background: transparent;
+    }
 
-  .desktop-presentation-scroll::-webkit-scrollbar-track {
-    background: transparent;
+    .desktop-presentation-content {
+      min-height: 100%;
+    }
+
+    .desktop-presentation-content > div[class*="h-full"] {
+      height: auto !important;
+      min-height: 100%;
+    }
+
+    .desktop-presentation-content > div[class*="justify-center"] {
+      justify-content: flex-start !important;
+      padding-top: clamp(0.25rem, 1.1vh, 0.75rem);
+      padding-bottom: clamp(0.75rem, 1.8vh, 1.25rem);
+    }
   }
 
   .glass-surface-neutral {

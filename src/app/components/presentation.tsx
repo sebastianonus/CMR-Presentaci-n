@@ -93,8 +93,12 @@ export default function Presentation() {
               <MobilePresentation currentSlide={currentSlide} />
             </div>
           ) : (
-            <div className="absolute inset-x-0 top-0 bottom-24 overflow-hidden">
-              <CurrentSlideComponent />
+            <div className="desktop-presentation-scroll absolute inset-x-0 top-0 bottom-24 overflow-y-auto overflow-x-hidden px-[clamp(1rem,3.2vw,3.5rem)] py-[clamp(1.25rem,2.6vh,2rem)]">
+              <div className="mx-auto w-full max-w-[min(1580px,100%)]">
+                <div className="desktop-slide-safe-area w-full rounded-[clamp(1rem,1.8vw,1.75rem)]">
+                  <CurrentSlideComponent />
+                </div>
+              </div>
             </div>
           )}
         </motion.div>

@@ -96,21 +96,21 @@ export default function Slide9() {
             <div className="space-y-2.5 mb-5">
               <div className="bg-white/5 rounded-xl p-3.5 border-l-4 border-green-500">
                 <div className="text-sm text-white/70 mb-1">{slide9.mermaLabel}</div>
-                <div className="text-xl md:text-2xl text-green-400">{formatNumber(mermaReduction)} EUR</div>
+                <div className="text-xl md:text-2xl text-green-400">{formatNumber(mermaReduction)} {slide9.currencySuffix}</div>
               </div>
               <div className="bg-white/5 rounded-xl p-3.5 border-l-4 border-blue-500">
                 <div className="text-sm text-white/70 mb-1">{slide9.claimsLabel}</div>
-                <div className="text-xl md:text-2xl text-blue-400">{formatNumber(claimsReduction)} EUR</div>
+                <div className="text-xl md:text-2xl text-blue-400">{formatNumber(claimsReduction)} {slide9.currencySuffix}</div>
               </div>
               <div className="bg-white/5 rounded-xl p-3.5 border-l-4 border-purple-500">
                 <div className="text-sm text-white/70 mb-1">{slide9.otifLabel}</div>
-                <div className="text-xl md:text-2xl text-purple-400">{formatNumber(otifImprovement)} EUR</div>
+                <div className="text-xl md:text-2xl text-purple-400">{formatNumber(otifImprovement)} {slide9.currencySuffix}</div>
               </div>
             </div>
 
             <div className="glass-surface-accent rounded-xl p-4 text-center">
               <div className="text-sm text-white/90 mb-2">{slide9.totalImpactLabel}</div>
-              <div className="text-3xl md:text-4xl text-white mb-1.5">{formatNumber(totalSavings)} EUR</div>
+              <div className="text-3xl md:text-4xl text-white mb-1.5">{formatNumber(totalSavings)} {slide9.currencySuffix}</div>
               <div className="text-sm md:text-base text-white/90">{slide9.totalImpactSub}</div>
             </div>
           </motion.div>

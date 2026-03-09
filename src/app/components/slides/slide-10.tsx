@@ -49,7 +49,7 @@ export default function Slide10() {
           </p>
           <button className="inline-flex items-center gap-2 rounded-xl bg-[rgb(var(--onus-turquoise-rgb))]/20 border border-[rgb(var(--onus-turquoise-rgb))]/60 px-4 py-2 text-[rgb(var(--onus-turquoise-rgb))] font-semibold hover:bg-[rgb(var(--onus-turquoise-rgb))]/30 transition-colors">
             <Leaf className="w-5 h-5" />
-            Sostenibilidad
+            {slide10.sustainabilityLabel}
           </button>
         </motion.div>
       </div>

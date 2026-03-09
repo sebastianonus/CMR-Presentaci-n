@@ -1,12 +1,12 @@
 ﻿// ============================================================
-// ONUS EXPRESS â€“ CMR Group Presentation Texts
+// ONUS EXPRESS - CMR Group Presentation Texts
 // Centralised copy file: edit here to update all slides
 // ============================================================
 
 // --------------- SLIDE 1 ---------------
 export const slide1 = {
-  subtitle: "Propuesta EstratÃ©gica para DirecciÃ³n de Operaciones â€“ CMR Group",
-  cta: "Convierte tu logÃ­stica en una ventaja competitiva",
+  subtitle: "Propuesta Estratégica para Dirección de Operaciones - CMR Group",
+  cta: "Convierte tu logística en una ventaja competitiva",
   separatorLabel: "para",
 };
 
@@ -14,43 +14,43 @@ export const slide1 = {
 export const slideDisclaimer = {
   badge: "",
   title: "Propuesta DEMO para CMR Group",
-  intro: "Esta propuesta es demostrativa y se ha elaborado con estimaciones basadas en informaciÃ³n pÃºblica, benchmarks sectoriales y parÃ¡metros estÃ¡ndar de organizaciones comparables. No utiliza datos reales de CMR Group ni pretende reflejar su situaciÃ³n actual.",
-  purposeTitle: "El objetivo es ilustrar una metodologÃ­a de trabajo estructurada para:",
+  intro: "Esta propuesta es demostrativa y se ha elaborado con estimaciones basadas en información pública, benchmarks sectoriales y parámetros estándar de organizaciones comparables. No utiliza datos reales de CMR Group ni pretende reflejar su situación actual.",
+  purposeTitle: "El objetivo es ilustrar una metodología de trabajo estructurada para:",
   purposes: [
-    "Identificar posibles Ã¡reas de optimizaciÃ³n",
+    "Identificar posibles áreas de optimización",
     "Detectar oportunidades de mejora operativa y financiera",
     "Estimar impactos potenciales en eficiencia o rentabilidad",
   ],
-  phasesTitle: "Enfoque metodolÃ³gico â€” 3 fases",
+  phasesTitle: "Enfoque metodológico - 3 fases",
   phases: [
-    { num: "01", title: "AnÃ¡lisis preliminar hipotÃ©tico", desc: "ConstrucciÃ³n de un escenario estimado con fuentes pÃºblicas y referencias sectoriales." },
-    { num: "02", title: "Palancas de mejora", desc: "SimulaciÃ³n de Ã¡reas donde suelen aparecer oportunidades en compaÃ±Ã­as similares." },
-    { num: "03", title: "ProyecciÃ³n de impacto", desc: "ModelizaciÃ³n orientativa basada en hipÃ³tesis explÃ­citas y revisables." },
+    { num: "01", title: "Análisis preliminar hipotético", desc: "Construcción de un escenario estimado con fuentes públicas y referencias sectoriales." },
+    { num: "02", title: "Palancas de mejora", desc: "Simulación de áreas donde suelen aparecer oportunidades en compañías similares." },
+    { num: "03", title: "Proyección de impacto", desc: "Modelización orientativa basada en hipótesis explícitas y revisables." },
   ],
-  footer: "Las cifras son estimativas e hipÃ³tesis ajustables con informaciÃ³n interna validada. El propÃ³sito es abrir conversaciÃ³n, no emitir conclusiones definitivas.",
+  footer: "Las cifras son estimativas e hipótesis ajustables con información interna validada. El propósito es abrir conversación, no emitir conclusiones definitivas.",
 };
 
 // --------------- SLIDE 2 ---------------
 export const slide2 = {
-  title: "Diagnostico Teorico",
-  visionTitle: "VisiÃ³n",
+  title: "Diagnóstico Teórico",
+  visionTitle: "Visión",
   visionText:
-    "La logÃ­stica nacional impacta directamente en el margen y la vida Ãºtil de los productos. La operaciÃ³n es una palanca financiera, no solo un coste.",
+    "La logística nacional impacta directamente en el margen y la vida útil de los productos. La operación es una palanca financiera, no solo un coste.",
   factsTitle: "Hechos Observados",
   facts: [
     {
       text: "Entre el 60-80% de las incidencias se originan en el tramo interno; el foco de mejora debe ser el transporte nacional.",
     },
     {
-      text: "Existe una falta de visibilidad tÃ©rmica en la Ãºltima milla, lo que reduce la capacidad de defensa ante reclamaciones.",
+      text: "Existe una falta de visibilidad térmica en la última milla, lo que reduce la capacidad de defensa ante reclamaciones.",
     },
     {
-      text: "La variabilidad operativa genera imprevisibilidad financiera y presiÃ³n en el margen.",
+      text: "La variabilidad operativa genera imprevisibilidad financiera y presión en el margen.",
     },
   ],
   implication:
-    "La optimizaciÃ³n nacional representa una ventaja competitiva estructural sostenible.",
-  implicationPrefix: "ImplicaciÃ³n EstratÃ©gica:",
+    "La optimización nacional representa una ventaja competitiva estructural sostenible.",
+  implicationPrefix: "Implicación Estratégica:",
 };
 
 // --------------- SLIDE 3 ---------------
@@ -58,57 +58,57 @@ export const slide3 = {
   title: "Flujo Operativo Actual vs. Arquitectura ONUS",
   currentTitle: "Flujo Actual (Reactivo)",
   currentItems: [
-    "GestiÃ³n documental reactiva",
-    "Control tÃ©rmico limitado",
-    "FEFO estÃ¡ndar",
-    "GestiÃ³n correctiva de incidencias",
+    "Gestión documental reactiva",
+    "Control térmico limitado",
+    "FEFO estándar",
+    "Gestión correctiva de incidencias",
   ],
-  currentWarning: "âš ï¸ Sin control en tiempo real",
-  onusTitle: "Arquitectura ONUS (EvoluciÃ³n)",
+  currentWarning: "Sin control en tiempo real",
+  onusTitle: "Arquitectura ONUS (Evolución)",
   onusItems: [
-    "âœ“ ValidaciÃ³n documental preventiva",
-    "âœ“ Visibilidad termica 24/7 en tiempo real",
-    "âœ“ Protocolos FEFO dinÃ¡micos",
-    "âœ“ AnÃ¡lisis predictivo de riesgo",
+    "Validación documental preventiva",
+    "Visibilidad térmica 24/7 en tiempo real",
+    "Protocolos FEFO dinámicos",
+    "Análisis predictivo de riesgo",
   ],
-  onusPositive: "âœ“ Control y anÃ¡lisis en tiempo real",
+  onusPositive: "Control y análisis en tiempo real",
   cta: "Flujo integrado con capa de control",
 };
 
 // --------------- SLIDE 4 ---------------
 export const slide4 = {
-  title: "IngenierÃ­a TÃ©cnica de Cadena de FrÃ­o",
-  capTitle: "Capacidad TÃ©cnica",
+  title: "Ingeniería Técnica de Cadena de Frío",
+  capTitle: "Capacidad Técnica",
   capabilities: [
     {
-      title: "MonitorizaciÃ³n Continua",
+      title: "Monitorización Continua",
       desc: "Control por unidad en tiempo real",
     },
     {
       title: "Alertas Tempranas",
-      desc: "Desviaciones de Â±0,5Â°C detectadas al instante",
+      desc: "Desviaciones de ±0,5°C detectadas al instante",
     },
     {
-      title: "Modelos de DegradaciÃ³n",
-      desc: "Por categorÃ­a de producto",
+      title: "Modelos de Degradación",
+      desc: "Por categoría de producto",
     },
   ],
-  impactTitle: "Impacto EstratÃ©gico",
+  impactTitle: "Impacto Estratégico",
   impacts: [
     {
-      title: "ReducciÃ³n de Mermas",
-      desc: "Control preciso que minimiza pÃ©rdidas",
+      title: "Reducción de Mermas",
+      desc: "Control preciso que minimiza pérdidas",
     },
     {
-      title: "OptimizaciÃ³n de Vida Ãštil",
-      desc: "MÃ¡s dÃ­as de producto en el lineal",
+      title: "Optimización de Vida Útil",
+      desc: "Más días de producto en el lineal",
     },
     {
       title: "Registro Digital Trazable",
       desc: "Soporte en seguros y reclamaciones",
     },
   ],
-  footer: "ProtecciÃ³n directa del margen operativo",
+  footer: "Protección directa del margen operativo",
 };
 
 // --------------- SLIDE 5 ---------------
@@ -116,152 +116,153 @@ export const slide5 = {
   title: "Impacto Financiero Potencial",
   subTitle: "Palancas de Mejora",
   improvements: [
-    { title: "ReducciÃ³n de merma", range: "0,8% â€“ 1,5%" },
-    { title: "DisminuciÃ³n de reclamaciones", range: "15% - 25%" },
+    { title: "Reducción de merma", range: "0,8% - 1,5%" },
+    { title: "Disminución de reclamaciones", range: "15% - 25%" },
     { title: "Mejora del OTIF", range: "+3% - +6%" },
   ],
   effectTitle: "Efecto Financiero",
   effectItems: [
-    { label: "ProtecciÃ³n directa del margen", badge: "âœ“ Menos mermas" },
-    { label: "ReducciÃ³n de penalizaciones retail", badge: "âœ“ Mejor OTIF" },
-    { label: "OptimizaciÃ³n de costes invisibles", badge: "âœ“ Menos reprocesos" },
+    { label: "Protección directa del margen", badge: "Menos mermas" },
+    { label: "Reducción de penalizaciones retail", badge: "Mejor OTIF" },
+    { label: "Optimización de costes invisibles", badge: "Menos reprocesos" },
   ],
   footer: "Impacto directo en el",
-  footerHighlight: "EBITDA logÃ­stico",
+  footerHighlight: "EBITDA logístico",
 };
 
 // --------------- SLIDE 6 ---------------
 export const slide6 = {
   title: "Riesgos Operativos y Ventaja Estructural",
   riskLabel: "RIESGO",
-  solutionLabel: "SOLUCIÃ“N ONUS",
+  solutionLabel: "SOLUCIÓN ONUS",
   risks: [
-    { problem: "Roturas de frÃ­o", solution: "Telemetría 24/7 en tiempo real" },
-    { problem: "Errores documentales", solution: "ValidaciÃ³n preventiva" },
+    { problem: "Roturas de frío", solution: "Telemetría 24/7 en tiempo real" },
+    { problem: "Errores documentales", solution: "Validación preventiva" },
     {
       problem: "Incumplimiento de ventanas horarias",
-      solution: "OptimizaciÃ³n dinÃ¡mica de rutas",
+      solution: "Optimización dinámica de rutas",
     },
     {
       problem: "Reclamaciones por calidad",
       solution: "Protocolos de control con evidencia digital",
     },
   ],
-  footer: "GestiÃ³n activa de riesgos =",
-  footerBold: "ProtecciÃ³n del margen",
+  footer: "Gestión activa de riesgos =",
+  footerBold: "Protección del margen",
 };
 
 // --------------- SLIDE 7 ---------------
 export const slide7 = {
-  title: "ResoluciÃ³n de Incidencias de Margen",
+  title: "Resolución de Incidencias de Margen",
   problemLabel: "Problema",
-  solutionLabel: "SOLUCIÃ“N",
+  solutionLabel: "SOLUCIÓN",
   solutions: [
-    { problem: "Retrasos", solution: "OptimizaciÃ³n de rutas" },
+    { problem: "Retrasos", solution: "Optimización de rutas" },
     { problem: "Faltantes o golpes", solution: "Checklist de salida y POD digital" },
     {
       problem: "Esperas en descarga",
-      solution: "GestiÃ³n activa de clientes y ETA proactiva",
+      solution: "Gestión activa de clientes y ETA proactiva",
     },
     {
-      problem: "Cadena de frÃ­o irregular",
-      solution: "Protocolo de frÃ­o trazable",
+      problem: "Cadena de frío irregular",
+      solution: "Protocolo de frío trazable",
     },
   ],
-  cta: "âœ“ Cada incidencia resuelta = Margen protegido",
+  cta: "Cada incidencia resuelta = margen protegido",
 };
 
 // --------------- SLIDE 8 ---------------
 export const slide8 = {
-  title: "Impacto EconÃ³mico Cuantificado",
+  title: "Impacto Económico Cuantificado",
   scenarioTitle: "Escenario Base",
   scenarioSubtitle: "Datos representativos del sector",
   tons: "25.000",
   tonsLabel: "Toneladas",
-  totalValue: "45Mâ‚¬",
+  totalValue: "45M€",
   totalValueLabel: "Valor Total",
   savingsTitle: "Ahorros Proyectados",
   savings: [
-    { value: "450.000â‚¬", label: "ReducciÃ³n de merma" },
-    { value: "120.000â‚¬", label: "Menos reclamaciones" },
-    { value: "170-270kâ‚¬", label: "Mejora OTIF + costes invisibles" },
+    { value: "450.000€", label: "Reducción de merma" },
+    { value: "120.000€", label: "Menos reclamaciones" },
+    { value: "170-270k€", label: "Mejora OTIF + costes invisibles" },
   ],
   totalLabel: "Impacto Total Anual Estimado",
-  totalRange: "740.000â‚¬ - 840.000â‚¬",
+  totalRange: "740.000€ - 840.000€",
   potential: "Potencial aproximado:",
-  potentialValue: "~1.000.000â‚¬ / aÃ±o",
+  potentialValue: "~1.000.000€ / año",
 };
 
 // --------------- SLIDE 9 ---------------
 export const slide9 = {
-  title: "Impacto EconÃ³mico Personalizado",
+  title: "Impacto Económico Personalizado",
   subtitle: "Introduce tus CIFRAS para calcular el impacto en CMR Group",
   inputTitle: "Datos de CMR Group",
   volumeLabel: "Volumen Anual (Toneladas)",
   volumeExample: "Ejemplo: 25.000 Tn",
-  valueLabel: "Valor Total (Millones â‚¬)",
-  valueExample: "Ejemplo: 45 Mâ‚¬",
+  valueLabel: "Valor Total (Millones €)",
+  valueExample: "Ejemplo: 45 M€",
   disclaimer:
-    "ðŸ’¡ Los cÃ¡lculos se basan en las mejoras promedio del sector: reducciÃ³n de merma (1%), reclamaciones (0.27%) y mejora de OTIF (0.5%)",
+    "Los cálculos se basan en mejoras promedio del sector: reducción de merma (1%), reclamaciones (0,27%) y mejora de OTIF (0,5%).",
   resultsTitle: "Ahorro Proyectado",
-  mermaLabel: "ReducciÃ³n de Merma",
+  mermaLabel: "Reducción de Merma",
   claimsLabel: "Menos Reclamaciones",
   otifLabel: "Mejora OTIF + Costes Invisibles",
   totalImpactLabel: "IMPACTO TOTAL ANUAL",
   totalImpactSub: "Ahorro estimado para CMR Group",
-  // default values
+  currencySuffix: "EUR",
   defaultVolume: 25000,
   defaultValue: 45,
 };
 
 // --------------- SLIDE 10 ---------------
 export const slide10 = {
-  title: "KPIs EstratÃ©gicos Propuestos",
+  title: "KPIs Estratégicos Propuestos",
   kpis: [
-    { title: "Nivel de servicio", desc: "OTIF por regiÃ³n" },
-    { title: "Control tÃ©rmico", desc: "Incidencias por cada 1.000 envÃ­os" },
-    { title: "Vida Ãºtil", desc: "Entregada vs. teÃ³rica" },
+    { title: "Nivel de servicio", desc: "OTIF por región" },
+    { title: "Control térmico", desc: "Incidencias por cada 1.000 envíos" },
+    { title: "Vida útil", desc: "Entregada vs. teórica" },
     { title: "Eficiencia", desc: "Coste por tonelada" },
-    { title: "Riesgo", desc: "Ãndice de reclamaciÃ³n" },
+    { title: "Riesgo", desc: "Índice de reclamación" },
   ],
   footer: "KPIs conectados con la",
-  footerHighlight: "direcciÃ³n estratÃ©gica",
+  footerHighlight: "dirección estratégica",
+  sustainabilityLabel: "Sostenibilidad",
 };
 
 // --------------- SLIDE 11 ---------------
 export const slide11 = {
   title: "Propuesta de Valor",
-  missionTitle: "MisiÃ³n",
+  missionTitle: "Misión",
   missionText:
-    "Ofrecer una operativa logÃ­stica a medida con rapidez, eficiencia y trazabilidad en tiempo real.",
+    "Ofrecer una operativa logística a medida con rapidez, eficiencia y trazabilidad en tiempo real.",
   promiseTitle: "Promesa",
   promises: [
     "Rutas adaptadas a tus necesidades",
     "Apoyo en picos de demanda",
     "Control de calidad total",
-    "Monitorizacion de temperatura 24/7",
+    "Monitorización de temperatura 24/7",
   ],
-  quote: '"Tu logÃ­stica, como si fuera nuestra"',
+  quote: '"Tu logística, como si fuera nuestra"',
 };
 
 // --------------- SLIDE 12 ---------------
 export const slide12 = {
-  title: "ONUS APP y TecnologÃ­a",
-  platformTitle: "Plataforma TecnolÃ³gica",
+  title: "ONUS APP y Tecnología",
+  platformTitle: "Plataforma Tecnológica",
   platformDesc:
-    "TecnologÃ­a propia impulsada por IA para selecciÃ³n y asignaciÃ³n Ã³ptima de recursos",
+    "Tecnología propia impulsada por IA para selección y asignación óptima de recursos",
   features: [
     {
-      title: "Red de AutÃ³nomos",
-      desc: "Acceso a mas de 3.200 autonomos cualificados, con documentacion actualizada y en regla",
+      title: "Red de Autónomos",
+      desc: "Acceso a más de 3.200 autónomos cualificados, con documentación actualizada y en regla",
     },
     {
-      title: "AsignaciÃ³n Ãgil 24/7",
+      title: "Asignación Ágil 24/7",
       desc: "Respuesta inmediata ante cualquier necesidad",
     },
     {
       title: "Trazabilidad Total",
-      desc: "Seguimiento en tiempo real de cada envÃ­o",
+      desc: "Seguimiento en tiempo real de cada envío",
     },
     {
       title: "Flota Propia",
@@ -280,96 +281,96 @@ export const slide13 = {
   benefits: [
     {
       title: "Predictibilidad operativa",
-      desc: "Control total sobre la cadena logÃ­stica",
+      desc: "Control total sobre la cadena logística",
     },
     {
-      title: "Menor exposiciÃ³n a penalizaciones retail",
+      title: "Menor exposición a penalizaciones retail",
       desc: "Cumplimiento garantizado de OTIF",
     },
     {
-      title: "MÃ¡s dÃ­as de producto en el lineal",
-      desc: "OptimizaciÃ³n de vida Ãºtil",
+      title: "Más días de producto en el lineal",
+      desc: "Optimización de vida útil",
     },
     {
-      title: "Decisiones conectadas con la direcciÃ³n",
-      desc: "KPIs estratÃ©gicos en tiempo real",
+      title: "Decisiones conectadas con la dirección",
+      desc: "KPIs estratégicos en tiempo real",
     },
   ],
-  footer: "Onus = cargo en latin = \"responsabilidad\" =",
+  footer: 'Onus = cargo en latín = "responsabilidad" =',
   footerBold: "ONUS SE HACE CARGO",
 };
 
 // --------------- SLIDE 14 ---------------
 export const slide14 = {
-  title: "DecisiÃ³n EstratÃ©gica y Plan de ActivaciÃ³n",
+  title: "Decisión Estratégica y Plan de Activación",
   currentModelTitle: "Modelo Actual",
   currentModelItems: [
-    "âŒ GestiÃ³n reactiva",
-    "âŒ OperaciÃ³n variable",
-    "âŒ Visibilidad limitada",
-    "âŒ Riesgo no controlado",
+    "Gestión reactiva",
+    "Operación variable",
+    "Visibilidad limitada",
+    "Riesgo no controlado",
   ],
   onusModelTitle: "Modelo ONUS",
   onusModelItems: [
-    "âœ“ GestiÃ³n predictiva",
-    "âœ“ Control del margen",
-    "âœ“ Trazabilidad total",
-    "âœ“ Partner estratÃ©gico",
+    "Gestión predictiva",
+    "Control del margen",
+    "Trazabilidad total",
+    "Partner estratégico",
   ],
-  timelineTitle: "Cronograma de ActivaciÃ³n",
+  timelineTitle: "Cronograma de Activación",
   timeline: [
-    { value: "30 dÃ­as", label: "Inicio del piloto" },
-    { value: "90 dÃ­as", label: "MediciÃ³n de impacto" },
-    { value: "Escalado", label: "SegÃºn resultados" },
+    { value: "30 días", label: "Inicio del piloto" },
+    { value: "90 días", label: "Medición de impacto" },
+    { value: "Escalado", label: "Según resultados" },
   ],
 };
 
 // --------------- SLIDE 15 ---------------
 export const slide15 = {
-  title: "Piloto EstratÃ©gico (90 DÃ­as)",
-  subtitle: "ValidaciÃ³n con riesgo controlado y resultados medibles",
+  title: "Piloto Estratégico (90 Días)",
+  subtitle: "Validación con riesgo controlado y resultados medibles",
   phases: [
-    { title: "ImplementaciÃ³n", desc: "En categorÃ­as sensibles (berries, aguacate)" },
-    { title: "EvaluaciÃ³n", desc: "Financiera comparativa" },
-    { title: "RevisiÃ³n Ejecutiva", desc: "AnÃ¡lisis de resultados" },
+    { title: "Implementación", desc: "En categorías sensibles (berries, aguacate)" },
+    { title: "Evaluación", desc: "Financiera comparativa" },
+    { title: "Revisión Ejecutiva", desc: "Análisis de resultados" },
     { title: "Despliegue", desc: "Progresivo por regiones" },
   ],
-  footer: "âœ“ Resultados tangibles en",
+  footer: "Resultados tangibles en",
   footerBold: "menos de 3 meses",
 };
 
 // --------------- SLIDE 16 ---------------
 export const slide16 = {
-  title: "ROI Piloto EstratÃ©gico",
+  title: "ROI Piloto Estratégico",
   scenarioTitle: "Escenario Piloto",
   volumeLabel: "Volumen",
   volumeValue: "6.000 Tn",
   valueLabel: "Valor",
-  valueValue: "10,8 Mâ‚¬",
+  valueValue: "10,8 M€",
   impactTitle: "Impacto Financiero",
   savingLabel: "Ahorro Estimado",
-  savingValue: "163.000â‚¬",
-  costLabel: "Coste ImplementaciÃ³n",
-  costValue: "45-60kâ‚¬",
+  savingValue: "163.000€",
+  costLabel: "Coste Implementación",
+  costValue: "45-60k€",
   roiLabel: "ROI",
   roiValue: "2,5x - 3x",
-  roiSub: "Retorno de inversiÃ³n",
+  roiSub: "Retorno de inversión",
   paybackLabel: "Payback",
-  paybackValue: "< 90 dÃ­as",
-  paybackSub: "RecuperaciÃ³n de inversiÃ³n",
+  paybackValue: "< 90 días",
+  paybackSub: "Recuperación de inversión",
 };
 
 // --------------- SLIDE 17 ---------------
 export const slide17 = {
   title: "Diferencial ONUS",
-  quoteA: '"No optimizamos envios"',
+  quoteA: '"No optimizamos envíos"',
   quoteB: '"Optimizamos operaciones"',
   advantages: [
     { title: "Estructura de costes variables", desc: "Paga solo lo que necesitas" },
     { title: "Escalabilidad ante picos", desc: "Respuesta inmediata a demanda" },
     { title: "Procesos estandarizados", desc: "Calidad consistente" },
-    { title: "Motor de rentabilidad", desc: "LogÃ­stica que genera valor" },
-    { title: "ONUS App", desc: "Tecnologia IA para asignacion, control y decision" },
+    { title: "Motor de rentabilidad", desc: "Logística que genera valor" },
+    { title: "ONUS App", desc: "Tecnología IA para asignación, control y decisión" },
     { title: "Sostenibilidad", desc: "Green Path como capa activa de eficiencia responsable" },
   ],
   cta: "Enfoque en convertir la logística en un motor de rentabilidad",
@@ -386,33 +387,33 @@ export const slide18 = {
     },
     {
       title: "Soporte 24/7",
-      desc: "AtenciÃ³n continua en toda la cadena logÃ­stica",
+      desc: "Atención continua en toda la cadena logística",
     },
     {
-      title: "GarantÃ­a de Servicio",
+      title: "Garantía de Servicio",
       desc: "SLA comprometido con penalizaciones",
     },
     {
       title: "Mejora Continua",
-      desc: "Revisiones trimestrales y optimizaciÃ³n constante",
+      desc: "Revisiones trimestrales y optimización constante",
     },
   ],
-  footer: "mÃ¡s allÃ¡ de la logÃ­stica",
-  footerBold: "Partnership estratÃ©gico",
+  footer: "más allá de la logística",
+  footerBold: "Partnership estratégico",
 };
 
 // --------------- SLIDE 19 ---------------
 export const slide19 = {
-  title: "Posible Plan de Implementacion",
-  subtitle: "Roadmap estructurado para una transiciÃ³n sin fricciones",
+  title: "Posible Plan de Implementación",
+  subtitle: "Roadmap estructurado para una transición sin fricciones",
   timeline: [
     {
       phase: "Fase 1",
       title: "Kick-off y Onboarding",
       duration: "Semana 1-2",
       items: [
-        "ReuniÃ³n inicial y alineaciÃ³n de objetivos",
-        "ConfiguraciÃ³n de sistemas y accesos",
+        "Reunión inicial y alineación de objetivos",
+        "Configuración de sistemas y accesos",
         "Training equipos CMR",
       ],
     },
@@ -421,23 +422,23 @@ export const slide19 = {
       title: "Inicio Operativo",
       duration: "Semana 3-4",
       items: [
-        "Primera consolidaciÃ³n",
-        "MonitorizaciÃ³n intensiva",
+        "Primera consolidación",
+        "Monitorización intensiva",
         "Ajustes operativos",
       ],
     },
     {
       phase: "Fase 3",
-      title: "EstabilizaciÃ³n",
+      title: "Estabilización",
       duration: "Mes 2-3",
       items: [
-        "OptimizaciÃ³n de rutas",
-        "AnÃ¡lisis de resultados",
-        "RevisiÃ³n ejecutiva",
+        "Optimización de rutas",
+        "Análisis de resultados",
+        "Revisión ejecutiva",
       ],
     },
   ],
-  footer: "en menos de 30 dÃ­as",
+  footer: "en menos de 30 días",
   footerBold: "Go-live",
 };
 
@@ -446,27 +447,28 @@ export const slide20 = {
   title: "Beneficios Cuantificables",
   subtitle: "Roadmap estructurado para una transición sin fricciones",
   benefits: [
-    { stat: "15-25%", label: "ReducciÃ³n de costes logÃ­sticos" },
-    { stat: "2-3 dÃ­as", label: "Mejora en tiempos de trÃ¡nsito" },
+    { stat: "15-25%", label: "Reducción de costes logísticos" },
+    { stat: "2-3 días", label: "Mejora en tiempos de tránsito" },
     { stat: "100%", label: "Visibilidad end-to-end" },
-    { stat: "< 90 dÃ­as", label: "ROI demostrable" },
+    { stat: "< 90 días", label: "ROI demostrable" },
   ],
-  ctaTitle: "TransformaciÃ³n logÃ­stica con resultados inmediatos",
-  bullets: ["Costes optimizados", "OperaciÃ³n eficiente", "Control total"],
+  ctaTitle: "Transformación logística con resultados inmediatos",
+  bullets: ["Costes optimizados", "Operación eficiente", "Control total"],
 };
 
 // --------------- SLIDE 21 ---------------
 export const slide21 = {
   title: "",
-  subtitle: "Transformemos juntos tu operaciÃ³n logÃ­stica",
-  contact: [
-    { label: "Email", value: "info@onus.es" },
-    { label: "TelÃ©fono", value: "647726628" },
-    { label: "Web", value: "www.onus.es" },
-    { label: "Consulta", value: "Contacto directo" },
+  subtitle: "Transformemos juntos tu operación logística",
+  actionItems: [
+    { label: "Correo", value: "vissler@onusexpress.com", href: "mailto:vissler@onusexpress.com" },
+    { label: "Web", value: "www.onusexpress.com", href: "https://www.onusexpress.com" },
+    { label: "Consulta", value: "Formulario", href: "https://www.onusexpress.com/contacto" },
+    { label: "WhatsApp", value: "647726628", href: "https://wa.me/34647726628" },
   ],
   brand: "ONUS EXPRESS",
   brandTagline: "Nos Hacemos Cargo",
-  closing: "Gracias por su atenciÃ³n",
+  closing: "Gracias por su atención",
+  signature: "Valentin Issler - Departamento Comercial",
 };
 

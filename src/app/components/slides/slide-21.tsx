@@ -3,12 +3,7 @@ import { Mail, Phone, Globe, MessageCircle } from "lucide-react";
 import logo from "../../../assets/e7e41f04542fce7954ea5453ee29ba88235cf6cb.png";
 import { slide21 } from "../../texts";
 
-const actionItems = [
-  { label: "Correo", value: "vissler@onusexpress.com", href: "mailto:vissler@onusexpress.com", icon: Mail },
-  { label: "Web", value: "www.onusexpress.com", href: "https://www.onusexpress.com", icon: Globe },
-  { label: "Consulta", value: "Formulario", href: "https://www.onusexpress.com/contacto", icon: Phone },
-  { label: "WhatsApp", value: "647726628", href: "https://wa.me/34647726628", icon: MessageCircle },
-];
+const actionIcons = [Mail, Globe, Phone, MessageCircle];
 
 export default function Slide21() {
   return (
@@ -36,8 +31,8 @@ export default function Slide21() {
           className="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl px-8 py-7 mb-6"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {actionItems.map((item, i) => {
-              const Icon = item.icon;
+            {slide21.actionItems.map((item, i) => {
+              const Icon = actionIcons[i] ?? Mail;
               return (
                 <a
                   key={i}
@@ -76,7 +71,7 @@ export default function Slide21() {
           className="text-center mt-4 text-sm text-white/60"
         >
           <p>{slide21.closing}</p>
-          <p className="mt-2 text-white/80 text-base">Valentin Issler - Departamento Comercial</p>
+          <p className="mt-2 text-white/80 text-base">{slide21.signature}</p>
         </motion.div>
       </div>
     </div>

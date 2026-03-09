@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+﻿import { motion } from "motion/react";
 import { Smartphone, Brain, Users, Map, Zap, Truck } from "lucide-react";
 import greenPathLogo from "../../../assets/Greenpath_Logo_Logistics_Negativo.png";
 import { slide12 } from "../../texts";
@@ -50,7 +50,7 @@ export default function Slide12() {
           >
             {slide12.features.map((feat, i) => {
               const Icon = featureIcons[i];
-              const isSustainability = feat.title === "Sostenibilidad";
+              const isSustainability = i === slide12.features.length - 1;
               const styleClass = featureStyles[i] ?? featureStyles[featureStyles.length - 1];
 
               return (
@@ -75,3 +75,4 @@ export default function Slide12() {
     </div>
   );
 }
+

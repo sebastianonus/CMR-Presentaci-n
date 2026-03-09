@@ -6,6 +6,7 @@ const excludedAssets = [
   "c6bba0f7d7742a6f216f288717b1e62f14e71b26", // ONUS isologo
   "e7e41f04542fce7954ea5453ee29ba88235cf6cb", // ONUS logo
   "Greenpath_Logo_Logistics_VerdeLima", // Green Path logo
+  "Greenpath_Logo_Logistics_Negativo", // Green Path logo (negativo)
 ];
 
 const assetModules = import.meta.glob("../../assets/*", {

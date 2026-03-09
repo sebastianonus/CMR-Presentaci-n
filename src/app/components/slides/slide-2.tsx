@@ -23,7 +23,7 @@ export default function Slide2() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8 mb-8"
         >
-          <h3 className="text-2xl mb-4 text-white">{slide2.visionTitle}</h3>
+          <h3 className="inline-flex rounded-lg bg-[rgb(var(--onus-dark-blue-rgb))] px-4 py-2 text-3xl mb-4 text-white font-bold">{slide2.visionTitle}</h3>
           <p className="text-xl text-white/90 leading-relaxed">{slide2.visionText}</p>
         </motion.div>
 
@@ -45,7 +45,7 @@ export default function Slide2() {
                   className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 flex items-start gap-4 hover:bg-white/10 transition-all"
                 >
                   <div className="glass-chip-neutral p-3 rounded-lg flex-shrink-0">
-                    <Icon className="w-6 h-6 text-white" />
+                    <Icon className="w-6 h-6 text-[rgb(var(--onus-turquoise-rgb))]" />
                   </div>
                   <p className="text-white/90 leading-relaxed">{fact.text}</p>
                 </motion.div>

@@ -38,7 +38,7 @@ export default function Slide18() {
                 className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl px-5 py-4 hover:scale-[1.01] transition-transform"
               >
                 <div className="glass-chip-neutral p-2.5 rounded-xl w-fit mb-2.5">
-                  <Icon className="w-6 h-6 text-white" />
+                  <Icon className="w-6 h-6 text-[rgb(var(--onus-turquoise-rgb))]" />
                 </div>
                 <h3 className="text-base md:text-lg mb-1.5 text-white">{service.title}</h3>
                 <p className="text-white/80 text-xs md:text-sm leading-relaxed">{service.desc}</p>

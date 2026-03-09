@@ -35,7 +35,7 @@ export default function Slide9() {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-base md:text-lg text-center text-white/90 mb-6"
+          className="text-2xl md:text-3xl font-semibold text-center text-white mb-6"
         >
           {slide9.subtitle}
         </motion.p>

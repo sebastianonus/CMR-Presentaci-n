@@ -3,7 +3,6 @@ import { TrendingDown, Shield, Clock, Euro } from "lucide-react";
 import { slide5 } from "../../texts";
 
 const improvementIcons = [TrendingDown, Shield, Clock];
-const improvementColors = ["bg-red-500/80", "bg-orange-500/80", "bg-green-500/80"];
 
 export default function Slide5() {
   return (
@@ -38,8 +37,8 @@ export default function Slide5() {
                 transition={{ duration: 0.6, delay: 0.3 + index * 0.15 }}
                 className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8 hover:scale-105 transition-transform"
               >
-                <div className={`${improvementColors[index]} p-4 rounded-xl w-fit mb-4`}>
-                  <Icon className="w-8 h-8 text-white" />
+                <div className="bg-[rgb(var(--onus-turquoise-rgb))]/20 p-4 rounded-xl w-fit mb-4">
+                  <Icon className="w-8 h-8 text-[rgb(var(--onus-turquoise-rgb))]" />
                 </div>
                 <h4 className="text-xl mb-3 text-white">{item.title}</h4>
                 <div className="text-3xl text-[rgb(var(--onus-turquoise-rgb))]">{item.range}</div>
@@ -56,7 +55,7 @@ export default function Slide5() {
         >
           <div className="flex items-center gap-4 mb-6">
             <div className="glass-chip-neutral p-3 rounded-lg">
-              <Euro className="w-8 h-8 text-white" />
+              <Euro className="w-8 h-8 text-[rgb(var(--onus-turquoise-rgb))]" />
             </div>
             <h3 className="text-3xl text-white">{slide5.effectTitle}</h3>
           </div>

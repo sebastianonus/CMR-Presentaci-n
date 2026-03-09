@@ -39,7 +39,7 @@ export default function Slide17() {
                 className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl px-5 py-4 hover:scale-[1.01] transition-transform"
               >
                 <div className="glass-chip-neutral p-3 rounded-xl w-fit mb-3">
-                  <Icon className="w-6 h-6 text-white" />
+                  <Icon className="w-6 h-6 text-[rgb(var(--onus-turquoise-rgb))]" />
                 </div>
                 <h3 className="text-lg md:text-xl mb-2 text-white">{adv.title}</h3>
                 <p className="text-sm md:text-base text-white/80 leading-relaxed">{adv.desc}</p>
@@ -54,7 +54,7 @@ export default function Slide17() {
           transition={{ duration: 0.6, delay: 0.9 }}
           className="mt-5 text-center"
         >
-          <div className="glass-surface-neutral inline-block text-white px-6 py-3 rounded-full text-base md:text-lg">
+          <div className="glass-surface-neutral inline-block text-[rgb(var(--onus-turquoise-rgb))] px-6 py-3 rounded-full text-base md:text-lg font-semibold border border-[rgb(var(--onus-turquoise-rgb))]/60">
             {slide17.cta}
           </div>
         </motion.div>

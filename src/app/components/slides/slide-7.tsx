@@ -1,13 +1,6 @@
 import { motion } from "motion/react";
 import { slide7 } from "../../texts";
 
-const colors = [
-  "bg-purple-500/80",
-  "bg-pink-500/80",
-  "bg-red-500/80",
-  "bg-orange-500/80",
-];
-
 export default function Slide7() {
   return (
     <div className="w-full h-full flex items-center justify-center p-12">
@@ -30,7 +23,7 @@ export default function Slide7() {
               transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
               className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8 hover:scale-105 transition-transform"
             >
-              <div className={`${colors[index]} p-1 rounded-xl mb-6`}>
+              <div className="bg-red-500/80 p-1 rounded-xl mb-6">
                 <div className="bg-[rgb(var(--onus-dark-blue-rgb))] p-4 rounded-lg">
                   <h3 className="text-2xl text-white mb-2">{slide7.problemLabel}</h3>
                   <p className="text-xl text-white/80">{item.problem}</p>

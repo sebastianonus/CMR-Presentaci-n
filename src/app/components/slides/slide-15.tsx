@@ -21,7 +21,7 @@ export default function Slide15() {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-xl text-center text-white/90 mb-12"
+          className="text-2xl md:text-3xl text-center text-white/90 mb-12 font-semibold"
         >
           {slide15.subtitle}
         </motion.p>
@@ -39,7 +39,7 @@ export default function Slide15() {
               >
                 <div className="flex items-center gap-4 mb-4">
                   <div className="glass-chip-neutral p-4 rounded-xl">
-                    <Icon className="w-8 h-8 text-white" />
+                    <Icon className="w-8 h-8 text-[rgb(var(--onus-turquoise-rgb))]" />
                   </div>
                   <div className="text-3xl text-white/50">0{index + 1}</div>
                 </div>

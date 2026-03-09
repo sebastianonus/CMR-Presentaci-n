@@ -47,7 +47,7 @@ export default function Slide21() {
                   className="flex min-w-0 items-center gap-4 rounded-2xl bg-white/5 px-4 py-4 transition-colors hover:bg-white/10"
                 >
                   <div className="glass-chip-neutral p-3 rounded-xl">
-                    <Icon className="w-6 h-6 text-white" />
+                    <Icon className="w-6 h-6 text-[rgb(var(--onus-turquoise-rgb))]" />
                   </div>
                   <div className="min-w-0 flex-1">
                     <div className="text-xs md:text-sm text-white/70 mb-1">{item.label}</div>
@@ -76,6 +76,7 @@ export default function Slide21() {
           className="text-center mt-4 text-sm text-white/60"
         >
           <p>{slide21.closing}</p>
+          <p className="mt-2 text-white/80 text-base">Valentin Issler - Departamento Comercial</p>
         </motion.div>
       </div>
     </div>

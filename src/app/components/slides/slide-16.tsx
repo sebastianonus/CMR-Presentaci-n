@@ -61,14 +61,14 @@ export default function Slide16() {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6"
         >
-          <div className="glass-surface-neutral rounded-2xl p-8 text-center">
-            <TrendingUp className="w-12 h-12 text-white mx-auto mb-4" />
+          <div className="glass-surface-neutral rounded-2xl p-8 text-center border-2 border-[rgb(var(--onus-turquoise-rgb))]/60 shadow-xl">
+            <TrendingUp className="w-12 h-12 text-[rgb(var(--onus-turquoise-rgb))] mx-auto mb-4" />
             <div className="text-sm text-white/90 mb-2">{slide16.roiLabel}</div>
             <div className="text-5xl text-white mb-2">{slide16.roiValue}</div>
             <div className="text-white/80">{slide16.roiSub}</div>
           </div>
-          <div className="glass-surface-accent rounded-2xl p-8 text-center">
-            <Clock className="w-12 h-12 text-white mx-auto mb-4" />
+          <div className="glass-surface-accent rounded-2xl p-8 text-center border-2 border-[rgb(var(--onus-turquoise-rgb))]/60 shadow-xl">
+            <Clock className="w-12 h-12 text-[rgb(var(--onus-turquoise-rgb))] mx-auto mb-4" />
             <div className="text-sm text-white/90 mb-2">{slide16.paybackLabel}</div>
             <div className="text-5xl text-white mb-2">{slide16.paybackValue}</div>
             <div className="text-white/80">{slide16.paybackSub}</div>

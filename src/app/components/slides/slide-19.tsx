@@ -19,7 +19,7 @@ export default function Slide19() {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-lg text-center text-white/80 mb-8"
+          className="text-2xl text-center text-white mb-8 font-semibold"
         >
           {slide19.subtitle}
         </motion.p>
@@ -71,7 +71,7 @@ export default function Slide19() {
           transition={{ duration: 0.6, delay: 0.9 }}
           className="glass-surface-accent rounded-2xl p-5 text-center flex items-center justify-center gap-3"
         >
-          <Rocket className="w-7 h-7 text-white" />
+          <Rocket className="w-7 h-7 text-[rgb(var(--onus-turquoise-rgb))]" />
           <p className="text-lg text-white">
             <span className="font-bold">{slide19.footerBold}</span> {slide19.footer}
           </p>

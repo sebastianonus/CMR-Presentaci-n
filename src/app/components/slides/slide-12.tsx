@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { Smartphone, Brain, Users, Map, Zap, Truck } from "lucide-react";
-import greenPathLogo from "../../../assets/Greenpath_Logo_Logistics_VerdeLima.png";
+import greenPathLogo from "../../../assets/Greenpath_Logo_Logistics_Negativo.png";
 import { slide12 } from "../../texts";
 
 const featureIcons = [Users, Zap, Map, Truck];
@@ -57,8 +57,8 @@ export default function Slide12() {
                 <div key={i} className={`${styleClass} rounded-xl p-6`}>
                   <div className="flex items-center gap-3 mb-2">
                     {isSustainability ? (
-                      <div className="flex h-9 w-9 items-center justify-center overflow-hidden rounded-lg bg-[#234635]">
-                        <img src={greenPathLogo} alt="Green Path Logistics" className="h-full w-full object-contain p-0.5" />
+                      <div className="flex h-10 w-10 items-center justify-center overflow-hidden rounded-md">
+                        <img src={greenPathLogo} alt="Green Path Logistics" className="h-full w-full object-contain" />
                       </div>
                     ) : (
                       Icon && <Icon className="w-6 h-6 text-[rgb(var(--onus-turquoise-rgb))]" />

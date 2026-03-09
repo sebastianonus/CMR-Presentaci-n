@@ -29,7 +29,7 @@ export default function Slide13() {
                 className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8 hover:bg-white/15 transition-all"
               >
                 <div className="glass-chip-neutral p-4 rounded-xl w-fit mb-6">
-                  <Icon className="w-10 h-10 text-white" />
+                  <Icon className="w-10 h-10 text-[rgb(var(--onus-turquoise-rgb))]" />
                 </div>
                 <h3 className="text-2xl mb-3 text-white">{benefit.title}</h3>
                 <p className="text-white/80 text-lg">{benefit.desc}</p>

@@ -448,7 +448,7 @@ export const slide19 = {
 // --------------- SLIDE 20 ---------------
 export const slide20 = {
   title: "Beneficios Cuantificables",
-  subtitle: "Roadmap estructurado para una transición sin fricciones",
+  subtitle: "Impacto medible desde el primer día",
   benefits: [
     { stat: "15-25%", label: "Reducción de costes logísticos" },
     { stat: "2-3 días", label: "Mejora en tiempos de tránsito" },

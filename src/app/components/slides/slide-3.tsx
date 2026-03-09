@@ -1,5 +1,4 @@
 import { motion } from "motion/react";
-import { ArrowRight } from "lucide-react";
 import { slide3 } from "../../texts";
 
 export default function Slide3() {
@@ -71,9 +70,8 @@ export default function Slide3() {
           transition={{ duration: 0.6, delay: 0.8 }}
           className="mt-8 flex justify-center"
         >
-          <div className="glass-surface-accent inline-flex items-center gap-3 text-white px-6 py-3 rounded-full">
+          <div className="glass-surface-accent inline-flex items-center text-white px-6 py-3 rounded-full">
             <span>{slide3.cta}</span>
-            <ArrowRight className="w-5 h-5" />
           </div>
         </motion.div>
       </div>

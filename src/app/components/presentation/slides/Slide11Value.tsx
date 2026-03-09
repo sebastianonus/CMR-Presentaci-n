@@ -47,7 +47,7 @@ export function Slide11Value() {
             "Tu logística, como si fuera nuestra"
           </p>
         </div>
-        <button className="inline-flex items-center gap-2 rounded-xl border border-emerald-300 bg-emerald-500/20 px-4 py-2 text-emerald-100 font-semibold hover:bg-emerald-500/30 transition-colors">
+        <button className="inline-flex items-center gap-2 rounded-xl border border-[rgb(var(--onus-turquoise-rgb))]/60 bg-[rgb(var(--onus-turquoise-rgb))]/20 px-4 py-2 text-[rgb(var(--onus-turquoise-rgb))] font-semibold hover:bg-[rgb(var(--onus-turquoise-rgb))]/30 transition-colors">
           <Leaf className="w-5 h-5" />
           Sostenibilidad
         </button>

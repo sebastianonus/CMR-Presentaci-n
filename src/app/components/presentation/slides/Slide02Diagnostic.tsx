@@ -10,14 +10,14 @@ export function Slide02Diagnostic() {
     },
     {
       icon: Eye,
-      iconColor: 'text-[rgb(var(--onus-dark-blue-rgb))]',
-      iconBg: 'bg-[rgb(var(--onus-dark-blue-rgb))]/15',
+      iconColor: 'text-[rgb(var(--onus-turquoise-rgb))]',
+      iconBg: 'bg-[rgb(var(--onus-turquoise-rgb))]/20',
       text: 'Existe una falta de visibilidad térmica en la última milla, lo que reduce la capacidad de defensa ante reclamaciones.',
     },
     {
       icon: AlertTriangle,
-      iconColor: 'text-amber-600',
-      iconBg: 'bg-amber-100',
+      iconColor: 'text-[rgb(var(--onus-turquoise-rgb))]',
+      iconBg: 'bg-[rgb(var(--onus-turquoise-rgb))]/20',
       text: 'La variabilidad operativa genera imprevisibilidad financiera y presión en el margen.',
     },
   ];

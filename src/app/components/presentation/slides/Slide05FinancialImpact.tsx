@@ -12,13 +12,13 @@ export function Slide05FinancialImpact() {
       icon: AlertTriangle,
       title: 'Disminución de Reclamaciones',
       value: '15% - 25%',
-      color: 'rgb(var(--onus-dark-blue-rgb))',
+      color: 'rgb(var(--onus-turquoise-rgb))',
     },
     {
       icon: Target,
       title: 'Mejora del OTIF',
       value: '+3% - +6%',
-      color: '#0f766e',
+      color: 'rgb(var(--onus-turquoise-rgb))',
     },
   ];
 
@@ -51,7 +51,7 @@ export function Slide05FinancialImpact() {
 
       <div className="bg-[rgb(var(--onus-dark-blue-rgb))] p-8 rounded-2xl flex-1 flex flex-col justify-center">
         <div className="flex items-center gap-4 mb-6">
-          <DollarSign className="w-10 h-10 text-emerald-400" />
+          <DollarSign className="w-10 h-10 text-[rgb(var(--onus-turquoise-rgb))]" />
           <h2 className="text-3xl text-white font-semibold">Efecto Financiero</h2>
         </div>
 

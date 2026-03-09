@@ -62,7 +62,7 @@ export function Slide10KPIs() {
         <p className="text-white text-lg leading-relaxed">
           <strong className="text-[rgb(var(--onus-turquoise-rgb))]">Dashboard en tiempo real</strong> con visibilidad completa de métricas críticas
         </p>
-        <button className="inline-flex items-center gap-2 rounded-xl bg-emerald-500/20 border border-emerald-300 px-4 py-2 text-emerald-100 font-semibold hover:bg-emerald-500/30 transition-colors">
+        <button className="inline-flex items-center gap-2 rounded-xl bg-[rgb(var(--onus-turquoise-rgb))]/20 border border-[rgb(var(--onus-turquoise-rgb))]/60 px-4 py-2 text-[rgb(var(--onus-turquoise-rgb))] font-semibold hover:bg-[rgb(var(--onus-turquoise-rgb))]/30 transition-colors">
           <Leaf className="h-5 w-5" />
           Sostenibilidad
         </button>

@@ -1,4 +1,4 @@
-import { Truck, Store, Warehouse, Package } from 'lucide-react';
+﻿import { Truck, Store, Warehouse, Package } from 'lucide-react';
 
 export function Slide19Services() {
   const services = [
@@ -31,13 +31,14 @@ export function Slide19Services() {
           Servicios de ONUS Express
         </h1>
         <div className="w-24 h-1 bg-[rgb(var(--onus-turquoise-rgb))] rounded-full" />
+        <p className="text-2xl md:text-3xl font-semibold mt-5 text-[rgb(var(--onus-dark-blue-rgb))]">Roadmap estructurado para una transición sin fricciones</p>
       </div>
 
       <p className="text-xl text-foreground/80 mb-8">Catálogo completo de soluciones logísticas:</p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 flex-1">
         {services.map((service, index) => (
-          <div 
+          <div
             key={index}
             className="bg-gradient-to-br from-[rgb(var(--onus-turquoise-rgb))]/5 to-transparent p-8 rounded-2xl border-l-4 border-[rgb(var(--onus-turquoise-rgb))] hover:shadow-xl transition-all"
           >
@@ -56,7 +57,7 @@ export function Slide19Services() {
 
       <div className="mt-8 bg-gradient-to-r from-[rgb(var(--onus-dark-blue-rgb))] to-[rgb(var(--onus-dark-blue-rgb))]/80 p-8 rounded-2xl">
         <p className="text-white text-xl text-center">
-          <strong className="text-[rgb(var(--onus-turquoise-rgb))]">Solución end-to-end:</strong> 
+          <strong className="text-[rgb(var(--onus-turquoise-rgb))]">Solución end-to-end:</strong>
           <span className="ml-2">Desde el almacén hasta el cliente final</span>
         </p>
       </div>

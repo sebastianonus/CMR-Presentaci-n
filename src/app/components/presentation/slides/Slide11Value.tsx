@@ -1,4 +1,4 @@
-import { Zap, BarChart3, Eye, Heart } from 'lucide-react';
+﻿import { Zap, BarChart3, Eye, Heart, Leaf } from 'lucide-react';
 
 export function Slide11Value() {
   return (
@@ -13,8 +13,8 @@ export function Slide11Value() {
       <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl mb-8 border border-white/20">
         <h2 className="text-3xl mb-4 text-[rgb(var(--onus-turquoise-rgb))]">Nuestra Misión</h2>
         <p className="text-2xl text-white/90 leading-relaxed">
-          Ofrecer una operativa logística a medida con <strong className="text-[rgb(var(--onus-turquoise-rgb))]">rapidez</strong>, 
-          <strong className="text-[rgb(var(--onus-turquoise-rgb))]"> eficiencia</strong> y 
+          Ofrecer una operativa logística a medida con <strong className="text-[rgb(var(--onus-turquoise-rgb))]">rapidez</strong>,
+          <strong className="text-[rgb(var(--onus-turquoise-rgb))]"> eficiencia</strong> y
           <strong className="text-[rgb(var(--onus-turquoise-rgb))]"> trazabilidad</strong> en tiempo real.
         </p>
       </div>
@@ -40,11 +40,17 @@ export function Slide11Value() {
         </div>
       </div>
 
-      <div className="mt-auto bg-[rgb(var(--onus-turquoise-rgb))]/20 backdrop-blur-sm p-8 rounded-2xl border-2 border-[rgb(var(--onus-turquoise-rgb))] flex items-center gap-4">
-        <Heart className="w-12 h-12 text-[rgb(var(--onus-turquoise-rgb))]" />
-        <p className="text-3xl font-bold text-[rgb(var(--onus-turquoise-rgb))]">
-          "Tu logística, como si fuera nuestra"
-        </p>
+      <div className="mt-auto bg-[rgb(var(--onus-turquoise-rgb))]/20 backdrop-blur-sm p-8 rounded-2xl border-2 border-[rgb(var(--onus-turquoise-rgb))] flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div className="flex items-center gap-4">
+          <Heart className="w-12 h-12 text-[rgb(var(--onus-turquoise-rgb))]" />
+          <p className="text-3xl font-bold text-[rgb(var(--onus-turquoise-rgb))]">
+            "Tu logística, como si fuera nuestra"
+          </p>
+        </div>
+        <button className="inline-flex items-center gap-2 rounded-xl border border-emerald-300 bg-emerald-500/20 px-4 py-2 text-emerald-100 font-semibold hover:bg-emerald-500/30 transition-colors">
+          <Leaf className="w-5 h-5" />
+          Sostenibilidad
+        </button>
       </div>
     </div>
   );

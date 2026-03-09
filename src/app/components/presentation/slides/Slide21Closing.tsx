@@ -1,4 +1,4 @@
-import { Rocket, Heart } from 'lucide-react';
+﻿import { Rocket, Heart } from 'lucide-react';
 import { motion } from 'motion/react';
 
 export function Slide21Closing() {
@@ -11,13 +11,14 @@ export function Slide21Closing() {
         className="text-center"
       >
         <Rocket className="w-24 h-24 text-[rgb(var(--onus-turquoise-rgb))] mx-auto mb-8" />
-        
+
         <h1 className="text-6xl mb-8 text-white" style={{ fontFamily: 'Raleway, sans-serif' }}>
           Estamos Listos
         </h1>
-        
-        <div className="w-32 h-1 bg-[rgb(var(--onus-turquoise-rgb))] mx-auto mb-12 rounded-full" />
-        
+
+        <div className="w-32 h-1 bg-[rgb(var(--onus-turquoise-rgb))] mx-auto mb-8 rounded-full" />
+        <p className="text-3xl font-semibold mb-8 text-[rgb(var(--onus-turquoise-rgb))]">Roadmap estructurado para una transición sin fricciones</p>
+
         <div className="bg-white/10 backdrop-blur-sm px-12 py-8 rounded-3xl border-2 border-[rgb(var(--onus-turquoise-rgb))] max-w-3xl mx-auto mb-12">
           <p className="text-3xl text-white mb-6 leading-relaxed">
             Propuesta para activar el <strong className="text-[rgb(var(--onus-turquoise-rgb))]">piloto en 30 días</strong> y medir el impacto real
@@ -37,6 +38,7 @@ export function Slide21Closing() {
         </h2>
 
         <p className="mt-8 text-white/60 text-lg">Nos Hacemos Cargo</p>
+        <p className="mt-3 text-white/80 text-lg">Valentin Issler - Departamento Comercial</p>
       </motion.div>
     </div>
   );

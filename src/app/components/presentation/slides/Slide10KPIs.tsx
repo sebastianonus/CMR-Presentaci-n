@@ -1,4 +1,4 @@
-import { Target, Thermometer, Calendar, DollarSign, AlertTriangle } from 'lucide-react';
+﻿import { Target, Thermometer, Calendar, DollarSign, AlertTriangle, Leaf } from 'lucide-react';
 
 export function Slide10KPIs() {
   const kpis = [
@@ -45,7 +45,7 @@ export function Slide10KPIs() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 flex-1">
         {kpis.map((kpi, index) => (
-          <div 
+          <div
             key={index}
             className="bg-gradient-to-br from-[rgb(var(--onus-turquoise-rgb))]/5 to-transparent p-8 rounded-2xl border-2 border-[rgb(var(--onus-turquoise-rgb))]/20 hover:border-[rgb(var(--onus-turquoise-rgb))] transition-all hover:shadow-lg flex flex-col items-center text-center"
           >
@@ -58,10 +58,14 @@ export function Slide10KPIs() {
         ))}
       </div>
 
-      <div className="mt-8 bg-[rgb(var(--onus-dark-blue-rgb))] p-6 rounded-2xl text-center">
-        <p className="text-white text-lg">
+      <div className="mt-8 bg-[rgb(var(--onus-dark-blue-rgb))] p-6 rounded-2xl flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <p className="text-white text-lg leading-relaxed">
           <strong className="text-[rgb(var(--onus-turquoise-rgb))]">Dashboard en tiempo real</strong> con visibilidad completa de métricas críticas
         </p>
+        <button className="inline-flex items-center gap-2 rounded-xl bg-emerald-500/20 border border-emerald-300 px-4 py-2 text-emerald-100 font-semibold hover:bg-emerald-500/30 transition-colors">
+          <Leaf className="h-5 w-5" />
+          Sostenibilidad
+        </button>
       </div>
     </div>
   );

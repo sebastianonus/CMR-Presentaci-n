@@ -1,4 +1,4 @@
-import { ClipboardCheck, Settings, Rocket, MapPin } from 'lucide-react';
+﻿import { ClipboardCheck, Settings, Rocket, MapPin } from 'lucide-react';
 
 export function Slide20Start() {
   const steps = [
@@ -35,11 +35,12 @@ export function Slide20Start() {
           Cómo Empezar
         </h1>
         <div className="w-24 h-1 bg-[rgb(var(--onus-turquoise-rgb))] rounded-full" />
+        <p className="text-2xl md:text-3xl font-semibold mt-5 text-[rgb(var(--onus-dark-blue-rgb))]">Roadmap estructurado para una transición sin fricciones</p>
       </div>
 
       <div className="space-y-6 flex-1">
         {steps.map((step, index) => (
-          <div 
+          <div
             key={index}
             className="relative bg-gradient-to-r from-[rgb(var(--onus-turquoise-rgb))]/5 to-transparent p-6 rounded-2xl border-l-4 border-[rgb(var(--onus-turquoise-rgb))] hover:shadow-lg transition-all"
           >
@@ -61,7 +62,7 @@ export function Slide20Start() {
 
       <div className="mt-8 bg-gradient-to-r from-[rgb(var(--onus-dark-blue-rgb))] to-[rgb(var(--onus-dark-blue-rgb))]/80 p-8 rounded-2xl text-center">
         <p className="text-white text-2xl mb-4">
-          <strong className="text-[rgb(var(--onus-turquoise-rgb))]">Proceso completo:</strong> 
+          <strong className="text-[rgb(var(--onus-turquoise-rgb))]">Proceso completo:</strong>
           <span className="ml-2">De diagnóstico a resultados medibles</span>
         </p>
         <p className="text-white/70">

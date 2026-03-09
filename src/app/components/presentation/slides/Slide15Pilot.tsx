@@ -1,24 +1,32 @@
-import { Play, Target, BarChart3, MapPin } from 'lucide-react';
+﻿import { Play, Target, BarChart3, MapPin } from 'lucide-react';
 
 export function Slide15Pilot() {
   const phases = [
     {
       icon: Play,
+      iconColor: 'text-fuchsia-600',
+      iconBg: 'bg-fuchsia-100',
       title: 'Implementación',
       description: 'En categorías sensibles (ej. berries o aguacate)',
     },
     {
       icon: BarChart3,
+      iconColor: 'text-sky-600',
+      iconBg: 'bg-sky-100',
       title: 'Evaluación Financiera',
       description: 'Comparativa antes/después con métricas reales',
     },
     {
       icon: Target,
+      iconColor: 'text-emerald-600',
+      iconBg: 'bg-emerald-100',
       title: 'Revisión Ejecutiva',
       description: 'Análisis de resultados y KPIs',
     },
     {
       icon: MapPin,
+      iconColor: 'text-amber-600',
+      iconBg: 'bg-amber-100',
       title: 'Despliegue Progresivo',
       description: 'Escalado por regiones según éxito',
     },
@@ -35,13 +43,13 @@ export function Slide15Pilot() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 flex-1">
         {phases.map((phase, index) => (
-          <div 
+          <div
             key={index}
             className="bg-gradient-to-br from-[rgb(var(--onus-turquoise-rgb))]/5 to-transparent p-8 rounded-2xl border-l-4 border-[rgb(var(--onus-turquoise-rgb))] hover:shadow-lg transition-shadow"
           >
             <div className="flex items-start gap-4">
-              <div className="w-16 h-16 bg-[rgb(var(--onus-turquoise-rgb))]/20 rounded-2xl flex items-center justify-center flex-shrink-0">
-                <phase.icon className="w-8 h-8 text-[rgb(var(--onus-turquoise-rgb))]" />
+              <div className={`w-16 h-16 ${phase.iconBg} rounded-2xl flex items-center justify-center flex-shrink-0`}>
+                <phase.icon className={`w-8 h-8 ${phase.iconColor}`} />
               </div>
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-3">
@@ -60,7 +68,7 @@ export function Slide15Pilot() {
       <div className="mt-8 bg-gradient-to-r from-[rgb(var(--onus-dark-blue-rgb))] to-[rgb(var(--onus-dark-blue-rgb))]/80 p-8 rounded-2xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
           <div>
-            <h3 className="text-2xl text-[rgb(var(--onus-turquoise-rgb))] font-semibold mb-3">Enfoque del Piloto</h3>
+            <h3 className="text-3xl text-[rgb(var(--onus-turquoise-rgb))] font-bold mb-3">Enfoque del Piloto</h3>
             <p className="text-white/90 text-lg">
               Probar el modelo en condiciones reales con productos de alto valor y sensibilidad
             </p>

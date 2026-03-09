@@ -1,17 +1,23 @@
-import { TrendingDown, AlertTriangle, Eye, Target } from 'lucide-react';
+﻿import { TrendingDown, AlertTriangle, Eye, Target } from 'lucide-react';
 
 export function Slide02Diagnostic() {
   const facts = [
     {
       icon: TrendingDown,
+      iconColor: 'text-[rgb(var(--onus-turquoise-rgb))]',
+      iconBg: 'bg-[rgb(var(--onus-turquoise-rgb))]/20',
       text: 'Entre el 60-80% de las incidencias se originan en el tramo interno; el foco de mejora debe ser el transporte nacional.',
     },
     {
       icon: Eye,
+      iconColor: 'text-[rgb(var(--onus-dark-blue-rgb))]',
+      iconBg: 'bg-[rgb(var(--onus-dark-blue-rgb))]/15',
       text: 'Existe una falta de visibilidad térmica en la última milla, lo que reduce la capacidad de defensa ante reclamaciones.',
     },
     {
       icon: AlertTriangle,
+      iconColor: 'text-amber-600',
+      iconBg: 'bg-amber-100',
       text: 'La variabilidad operativa genera imprevisibilidad financiera y presión en el margen.',
     },
   ];
@@ -26,9 +32,11 @@ export function Slide02Diagnostic() {
       </div>
 
       <div className="bg-gradient-to-r from-[rgb(var(--onus-turquoise-rgb))]/10 to-transparent p-8 rounded-2xl mb-8 border-l-4 border-[rgb(var(--onus-turquoise-rgb))]">
-        <h3 className="text-xl mb-3 text-[rgb(var(--onus-dark-blue-rgb))] font-semibold">Visión</h3>
-        <p className="text-lg text-foreground/80 leading-relaxed">
-          La logística nacional impacta directamente en el margen y la vida útil de los productos. 
+        <h3 className="inline-flex items-center rounded-xl bg-[rgb(var(--onus-dark-blue-rgb))] px-4 py-2 text-3xl mb-4 text-white font-bold tracking-wide">
+          Visión
+        </h3>
+        <p className="text-xl text-foreground/85 leading-relaxed font-medium">
+          La logística nacional impacta directamente en el margen y la vida útil de los productos.
           La operación es una palanca financiera, no solo un coste.
         </p>
       </div>
@@ -37,8 +45,8 @@ export function Slide02Diagnostic() {
       <div className="grid gap-4 mb-8">
         {facts.map((fact, index) => (
           <div key={index} className="flex gap-4 items-start p-6 bg-muted/30 rounded-xl hover:bg-muted/50 transition-colors">
-            <div className="flex-shrink-0 w-12 h-12 bg-[rgb(var(--onus-turquoise-rgb))]/20 rounded-full flex items-center justify-center">
-              <fact.icon className="w-6 h-6 text-[rgb(var(--onus-turquoise-rgb))]" />
+            <div className={`flex-shrink-0 w-12 h-12 ${fact.iconBg} rounded-full flex items-center justify-center`}>
+              <fact.icon className={`w-6 h-6 ${fact.iconColor}`} />
             </div>
             <p className="text-foreground/80 leading-relaxed pt-2">{fact.text}</p>
           </div>

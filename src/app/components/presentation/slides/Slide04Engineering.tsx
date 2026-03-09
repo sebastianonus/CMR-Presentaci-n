@@ -1,4 +1,4 @@
-import { Thermometer, Bell, TrendingUp, Shield } from 'lucide-react';
+﻿import { Thermometer, Bell, TrendingUp, Shield } from 'lucide-react';
 
 export function Slide04Engineering() {
   return (
@@ -11,7 +11,6 @@ export function Slide04Engineering() {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 flex-1">
-        {/* Capacidad Técnica */}
         <div className="bg-gradient-to-br from-[rgb(var(--onus-dark-blue-rgb))]/5 to-transparent p-8 rounded-2xl border border-border">
           <div className="flex items-center gap-3 mb-6">
             <div className="w-12 h-12 bg-[rgb(var(--onus-dark-blue-rgb))]/10 rounded-xl flex items-center justify-center">
@@ -22,8 +21,8 @@ export function Slide04Engineering() {
 
           <div className="space-y-6">
             <div className="flex items-start gap-4">
-              <div className="w-8 h-8 bg-[rgb(var(--onus-turquoise-rgb))]/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                <Bell className="w-4 h-4 text-[rgb(var(--onus-turquoise-rgb))]" />
+              <div className="w-8 h-8 bg-amber-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                <Bell className="w-4 h-4 text-amber-600" />
               </div>
               <div>
                 <h4 className="font-semibold mb-1">Monitorización Continua</h4>
@@ -32,8 +31,8 @@ export function Slide04Engineering() {
             </div>
 
             <div className="flex items-start gap-4">
-              <div className="w-8 h-8 bg-[rgb(var(--onus-turquoise-rgb))]/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                <TrendingUp className="w-4 h-4 text-[rgb(var(--onus-turquoise-rgb))]" />
+              <div className="w-8 h-8 bg-sky-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                <TrendingUp className="w-4 h-4 text-sky-600" />
               </div>
               <div>
                 <h4 className="font-semibold mb-1">Alertas Tempranas</h4>
@@ -42,8 +41,8 @@ export function Slide04Engineering() {
             </div>
 
             <div className="flex items-start gap-4">
-              <div className="w-8 h-8 bg-[rgb(var(--onus-turquoise-rgb))]/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                <Shield className="w-4 h-4 text-[rgb(var(--onus-turquoise-rgb))]" />
+              <div className="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                <Shield className="w-4 h-4 text-emerald-600" />
               </div>
               <div>
                 <h4 className="font-semibold mb-1">Modelos de Degradación</h4>
@@ -53,7 +52,6 @@ export function Slide04Engineering() {
           </div>
         </div>
 
-        {/* Impacto Estratégico */}
         <div className="bg-gradient-to-br from-[rgb(var(--onus-turquoise-rgb))]/10 to-transparent p-8 rounded-2xl border-2 border-[rgb(var(--onus-turquoise-rgb))]/30">
           <h2 className="text-2xl text-[rgb(var(--onus-turquoise-rgb))] font-semibold mb-6">Impacto Estratégico</h2>
 

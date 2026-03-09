@@ -1,14 +1,13 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { Calculator, TrendingUp, DollarSign } from 'lucide-react';
 
 export function Slide09Calculator() {
-  const [volume, setVolume] = useState(25000); // Toneladas
-  const [value, setValue] = useState(45000000); // Euros
+  const [volume, setVolume] = useState(25000);
+  const [value, setValue] = useState(45000000);
 
-  // Cálculos basados en los inputs
-  const mermaReduction = (value * 0.01).toFixed(0); // 1% del valor
-  const claimsReduction = (value * 0.003).toFixed(0); // 0.3% del valor
-  const otifImprovement = (value * 0.005).toFixed(0); // 0.5% del valor
+  const mermaReduction = (value * 0.01).toFixed(0);
+  const claimsReduction = (value * 0.003).toFixed(0);
+  const otifImprovement = (value * 0.005).toFixed(0);
 
   const totalImpact = (
     parseFloat(mermaReduction) +
@@ -36,14 +35,14 @@ export function Slide09Calculator() {
           Impacto Económico Personalizado CMR Group
         </h1>
         <div className="w-24 h-1 bg-[rgb(var(--onus-turquoise-rgb))] rounded-full" />
+        <p className="mt-5 text-3xl font-bold text-[rgb(var(--onus-dark-blue-rgb))]">Introduce tus CIFRAS</p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 flex-1">
-        {/* Panel de Inputs */}
         <div className="bg-gradient-to-br from-[rgb(var(--onus-dark-blue-rgb))]/5 to-transparent p-8 rounded-2xl border border-border">
           <div className="flex items-center gap-3 mb-6">
             <Calculator className="w-8 h-8 text-[rgb(var(--onus-dark-blue-rgb))]" />
-            <h2 className="text-2xl text-[rgb(var(--onus-dark-blue-rgb))] font-semibold">Datos de tu Operación</h2>
+            <h2 className="text-2xl text-[rgb(var(--onus-dark-blue-rgb))] font-semibold">Cifras de tu Operación</h2>
           </div>
 
           <div className="space-y-8">
@@ -93,7 +92,6 @@ export function Slide09Calculator() {
           </div>
         </div>
 
-        {/* Panel de Resultados */}
         <div className="bg-gradient-to-br from-[rgb(var(--onus-turquoise-rgb))]/10 to-transparent p-8 rounded-2xl border-2 border-[rgb(var(--onus-turquoise-rgb))]/30">
           <div className="flex items-center gap-3 mb-6">
             <TrendingUp className="w-8 h-8 text-[rgb(var(--onus-turquoise-rgb))]" />

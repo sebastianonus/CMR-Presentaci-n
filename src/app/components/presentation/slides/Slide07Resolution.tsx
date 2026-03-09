@@ -1,4 +1,4 @@
-import { Route, Package, Clock3, Thermometer } from 'lucide-react';
+﻿import { Route, Package, Clock3, Thermometer } from 'lucide-react';
 
 export function Slide07Resolution() {
   const solutions = [
@@ -35,7 +35,7 @@ export function Slide07Resolution() {
 
       <div className="space-y-4 flex-1">
         {solutions.map((item, index) => (
-          <div 
+          <div
             key={index}
             className="bg-gradient-to-r from-[rgb(var(--onus-turquoise-rgb))]/5 to-transparent p-6 rounded-2xl border-l-4 border-[rgb(var(--onus-turquoise-rgb))] hover:shadow-lg transition-shadow"
           >
@@ -45,8 +45,10 @@ export function Slide07Resolution() {
               </div>
               <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <p className="text-sm text-muted-foreground mb-1">Problema</p>
-                  <h3 className="text-xl font-semibold text-destructive">{item.problem}</h3>
+                  <p className="text-sm text-muted-foreground mb-2">Problema</p>
+                  <span className="inline-flex items-center rounded-lg border border-destructive/40 bg-destructive/10 px-3 py-1 text-lg font-semibold text-destructive">
+                    {item.problem}
+                  </span>
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground mb-1">Solución ONUS</p>

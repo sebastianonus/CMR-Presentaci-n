@@ -1,4 +1,4 @@
-import { ArrowRight, AlertCircle, Zap } from 'lucide-react';
+﻿import { AlertCircle, Zap } from 'lucide-react';
 
 export function Slide03Flow() {
   return (
@@ -11,13 +11,12 @@ export function Slide03Flow() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 flex-1">
-        {/* Flujo Actual */}
         <div className="flex flex-col">
           <div className="flex items-center gap-3 mb-6">
             <AlertCircle className="w-8 h-8 text-destructive" />
             <h2 className="text-2xl text-destructive font-semibold">Flujo Actual (Reactivo)</h2>
           </div>
-          
+
           <div className="bg-destructive/5 border-2 border-destructive/30 rounded-2xl p-6 flex-1 flex flex-col justify-around">
             <div className="space-y-4">
               <div className="flex items-start gap-3">
@@ -40,13 +39,12 @@ export function Slide03Flow() {
           </div>
         </div>
 
-        {/* Arquitectura ONUS */}
         <div className="flex flex-col">
           <div className="flex items-center gap-3 mb-6">
             <Zap className="w-8 h-8 text-[rgb(var(--onus-turquoise-rgb))]" />
             <h2 className="text-2xl text-[rgb(var(--onus-turquoise-rgb))] font-semibold">Arquitectura ONUS (Evolución)</h2>
           </div>
-          
+
           <div className="bg-[rgb(var(--onus-turquoise-rgb))]/5 border-2 border-[rgb(var(--onus-turquoise-rgb))]/30 rounded-2xl p-6 flex-1 flex flex-col justify-around">
             <div className="space-y-4">
               <div className="flex items-start gap-3">
@@ -55,7 +53,7 @@ export function Slide03Flow() {
               </div>
               <div className="flex items-start gap-3">
                 <div className="w-2 h-2 rounded-full bg-[rgb(var(--onus-turquoise-rgb))] mt-2" />
-                <p className="text-foreground/80 font-medium">Visibilidad termica 24/7 en tiempo real</p>
+                <p className="text-foreground/80 font-medium">Visibilidad térmica 24/7 en tiempo real</p>
               </div>
               <div className="flex items-start gap-3">
                 <div className="w-2 h-2 rounded-full bg-[rgb(var(--onus-turquoise-rgb))] mt-2" />
@@ -71,10 +69,8 @@ export function Slide03Flow() {
       </div>
 
       <div className="mt-8 flex items-center justify-center">
-        <div className="bg-gradient-to-r from-destructive/20 via-[rgb(var(--onus-turquoise-rgb))]/20 to-[rgb(var(--onus-turquoise-rgb))]/40 px-8 py-4 rounded-full flex items-center gap-4">
-          <span className="text-sm font-medium">Transformación</span>
-          <ArrowRight className="w-6 h-6 text-[rgb(var(--onus-turquoise-rgb))]" />
-          <span className="text-sm font-medium">Mejora Continua</span>
+        <div className="bg-gradient-to-r from-destructive/20 via-[rgb(var(--onus-turquoise-rgb))]/20 to-[rgb(var(--onus-turquoise-rgb))]/40 px-8 py-4 rounded-full flex items-center gap-3">
+          <span className="text-sm font-semibold">Flujo integrado con capa de control</span>
         </div>
       </div>
     </div>

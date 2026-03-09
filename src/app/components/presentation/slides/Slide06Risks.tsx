@@ -1,8 +1,8 @@
-import { Snowflake, FileWarning, Clock, AlertTriangle } from 'lucide-react';
+﻿import { Snowflake, FileWarning, Clock, AlertTriangle } from 'lucide-react';
 
 export function Slide06Risks() {
   const risks = [
-    { icon: Snowflake, title: 'Roturas de frío', solution: 'Telemetría 24/7' },
+    { icon: Snowflake, title: 'Roturas de frío', solution: 'Telemetría 24/7 en tiempo real' },
     { icon: FileWarning, title: 'Errores documentales', solution: 'Validación preventiva' },
     { icon: Clock, title: 'Incumplimiento de ventanas horarias', solution: 'Optimización dinámica de rutas' },
     { icon: AlertTriangle, title: 'Reclamaciones por calidad', solution: 'Protocolos de control con evidencia digital' },
@@ -19,7 +19,7 @@ export function Slide06Risks() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 flex-1">
         {risks.map((risk, index) => (
-          <div 
+          <div
             key={index}
             className="bg-gradient-to-br from-muted/30 to-transparent p-6 rounded-2xl border border-border hover:border-[rgb(var(--onus-turquoise-rgb))] transition-all group"
           >

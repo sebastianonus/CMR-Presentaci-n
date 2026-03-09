@@ -60,8 +60,11 @@ export default function Slide21() {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="glass-surface-accent rounded-2xl px-7 py-5 text-center"
         >
-          <p className="text-xl md:text-2xl text-white mb-2 font-bold">{slide21.brand}</p>
-          <p className="text-base md:text-lg text-white/90">{slide21.brandTagline}</p>
+          <p className="text-lg md:text-xl text-white/95 font-semibold">
+            {slide21.brand}
+            <span className="mx-2 text-white/70">{slide21.brandSeparator}</span>
+            <span className="text-white/90 font-medium">{slide21.brandTagline}</span>
+          </p>
         </motion.div>
 
         <motion.div

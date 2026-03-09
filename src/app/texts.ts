@@ -471,6 +471,7 @@ export const slide21 = {
   ],
   brand: "ONUS EXPRESS",
   brandTagline: "Nos Hacemos Cargo",
+  brandSeparator: " - ",
   closing: "Gracias por su atención",
   signature: "Valentin Issler - Departamento Comercial",
 };

@@ -227,6 +227,9 @@ export const slide10 = {
   footer: "KPIs conectados con la",
   footerHighlight: "dirección estratégica",
   sustainabilityLabel: "Sostenibilidad",
+  sustainabilityCardTitle: "Sostenibilidad",
+  sustainabilityCardDesc: "Green Path integrado como palanca de eficiencia sostenible",
+  sustainabilityLogoAlt: "Logo Green Path Logistics",
 };
 
 // --------------- SLIDE 11 ---------------

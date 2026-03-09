@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { Target, Thermometer, Calendar, DollarSign, Shield, Leaf } from "lucide-react";
+import greenPathLogo from "../../../assets/Greenpath_Logo_Logistics_Negativo.png";
 import { slide10 } from "../../texts";
 
 const kpiIcons = [Target, Thermometer, Calendar, DollarSign, Shield];
@@ -36,6 +37,19 @@ export default function Slide10() {
               </motion.div>
             );
           })}
+
+          <motion.div
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.8 }}
+            className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 hover:bg-white/15 transition-all group"
+          >
+            <div className="glass-chip-neutral p-2 rounded-xl w-fit mb-4 group-hover:scale-110 transition-transform">
+              <img src={greenPathLogo} alt={slide10.sustainabilityLogoAlt} className="h-10 w-10 object-contain" />
+            </div>
+            <h3 className="text-xl mb-2 text-white">{slide10.sustainabilityCardTitle}</h3>
+            <p className="text-white/70">{slide10.sustainabilityCardDesc}</p>
+          </motion.div>
         </div>
 
         <motion.div

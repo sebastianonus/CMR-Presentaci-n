@@ -1,5 +1,5 @@
 import { useNavigate, useParams } from "react-router";
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import isologo from "../../assets/c6bba0f7d7742a6f216f288717b1e62f14e71b26.png";
@@ -34,10 +34,15 @@ const slides = [
   Slide11, Slide12, Slide13, Slide14, Slide15, Slide16, Slide17, Slide18, Slide19, Slide20, Slide21
 ];
 
+const DESKTOP_BASE_WIDTH = 1920;
+const DESKTOP_BASE_HEIGHT = 1080;
+
 export default function Presentation() {
   const { slideNumber } = useParams();
   const navigate = useNavigate();
   const isMobile = useIsMobile();
+  const desktopShellRef = useRef<HTMLDivElement | null>(null);
+  const [desktopScale, setDesktopScale] = useState(1);
   const parsedSlide = slideNumber ? parseInt(slideNumber, 10) : 1;
   const currentSlide = Number.isFinite(parsedSlide) && parsedSlide >= 1 && parsedSlide <= slides.length ? parsedSlide : 1;
 
@@ -54,7 +59,45 @@ export default function Presentation() {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [currentSlide, navigate]);
 
+  useEffect(() => {
+    if (isMobile) return;
+
+    const shell = desktopShellRef.current;
+    if (!shell) return;
+
+    const updateScale = () => {
+      const rect = shell.getBoundingClientRect();
+      if (rect.width <= 0 || rect.height <= 0) return;
+
+      const nextScale = Math.min(
+        rect.width / DESKTOP_BASE_WIDTH,
+        rect.height / DESKTOP_BASE_HEIGHT,
+      );
+
+      setDesktopScale((prev) =>
+        Math.abs(prev - nextScale) < 0.001 ? prev : nextScale,
+      );
+    };
+
+    updateScale();
+
+    let resizeObserver: ResizeObserver | undefined;
+    if (typeof ResizeObserver !== "undefined") {
+      resizeObserver = new ResizeObserver(updateScale);
+      resizeObserver.observe(shell);
+    }
+
+    window.addEventListener("resize", updateScale);
+
+    return () => {
+      resizeObserver?.disconnect();
+      window.removeEventListener("resize", updateScale);
+    };
+  }, [isMobile]);
+
   const CurrentSlideComponent = slides[currentSlide - 1] ?? Slide1;
+  const desktopStageWidth = DESKTOP_BASE_WIDTH * desktopScale;
+  const desktopStageHeight = DESKTOP_BASE_HEIGHT * desktopScale;
 
   const goToNext = () => {
     if (currentSlide < slides.length) {
@@ -93,9 +136,28 @@ export default function Presentation() {
               <MobilePresentation currentSlide={currentSlide} />
             </div>
           ) : (
-            <div className="desktop-presentation-shell absolute inset-x-0 top-0 bottom-24 overflow-hidden">
-              <div className="desktop-presentation-content h-full">
-                <CurrentSlideComponent />
+            <div
+              ref={desktopShellRef}
+              className="desktop-presentation-shell absolute inset-x-0 top-0 bottom-24 overflow-hidden"
+            >
+              <div
+                className="desktop-presentation-stage"
+                style={{
+                  width: `${desktopStageWidth}px`,
+                  height: `${desktopStageHeight}px`,
+                }}
+              >
+                <div
+                  className="desktop-presentation-canvas"
+                  style={{
+                    width: `${DESKTOP_BASE_WIDTH}px`,
+                    height: `${DESKTOP_BASE_HEIGHT}px`,
+                    transform: `scale(${desktopScale})`,
+                    transformOrigin: "top left",
+                  }}
+                >
+                  <CurrentSlideComponent />
+                </div>
               </div>
             </div>
           )}

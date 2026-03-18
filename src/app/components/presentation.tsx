@@ -113,6 +113,7 @@ export default function Presentation() {
         desktopAvailableWidth / DESKTOP_BASE_WIDTH,
         desktopAvailableHeight / DESKTOP_BASE_HEIGHT,
       );
+  const desktopUiScale = isMobile ? 1 : desktopScale;
   const desktopStageWidth = DESKTOP_BASE_WIDTH * desktopScale;
   const desktopStageHeight = DESKTOP_BASE_HEIGHT * desktopScale;
 
@@ -206,7 +207,13 @@ export default function Presentation() {
           </button>
         </div>
       ) : (
-        <div className="fixed bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-4 bg-white/10 backdrop-blur-md px-6 py-3 rounded-full border border-white/20 z-50">
+        <div
+          className="fixed bottom-8 left-1/2 flex items-center gap-4 bg-white/10 backdrop-blur-md px-6 py-3 rounded-full border border-white/20 z-50"
+          style={{
+            transform: `translateX(-50%) scale(${desktopUiScale})`,
+            transformOrigin: "center bottom",
+          }}
+        >
           <button
             onClick={goToPrev}
             disabled={currentSlide === 1}
@@ -240,7 +247,13 @@ export default function Presentation() {
       )}
 
       {!isMobile && (
-        <div className="fixed top-8 right-8 text-white/80 backdrop-blur-md bg-white/10 px-4 py-2 rounded-full border border-white/20 z-50">
+        <div
+          className="fixed top-8 right-8 text-white/80 backdrop-blur-md bg-white/10 px-4 py-2 rounded-full border border-white/20 z-50"
+          style={{
+            transform: `scale(${desktopUiScale})`,
+            transformOrigin: "top right",
+          }}
+        >
           <span className="font-mono">{currentSlide} / {slides.length}</span>
         </div>
       )}
@@ -251,6 +264,10 @@ export default function Presentation() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
           className="fixed bottom-8 left-8 z-50"
+          style={{
+            transform: `scale(${desktopUiScale})`,
+            transformOrigin: "bottom left",
+          }}
         >
           <img src={isologo} alt="ONUS Isologo" className="w-16 h-16 object-contain" />
         </motion.div>

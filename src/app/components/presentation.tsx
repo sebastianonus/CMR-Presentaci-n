@@ -57,6 +57,7 @@ export default function Presentation() {
   const navigate = useNavigate();
   const isMobile = useIsMobile();
   const [viewportSize, setViewportSize] = useState(getViewportSize);
+  const [desktopContentScale, setDesktopContentScale] = useState(1);
   const parsedSlide = slideNumber ? parseInt(slideNumber, 10) : 1;
   const currentSlide = Number.isFinite(parsedSlide) && parsedSlide >= 1 && parsedSlide <= slides.length ? parsedSlide : 1;
 
@@ -100,6 +101,55 @@ export default function Presentation() {
     };
   }, [isMobile]);
 
+  useEffect(() => {
+    if (isMobile) {
+      setDesktopContentScale(1);
+      return;
+    }
+
+    const content = document.querySelector(".desktop-slide-fit-content") as HTMLElement | null;
+    if (!content) return;
+
+    let raf1 = 0;
+    let raf2 = 0;
+    let timeoutId = 0;
+
+    const updateContentScale = () => {
+      const contentWidth = Math.max(content.scrollWidth, DESKTOP_BASE_WIDTH);
+      const contentHeight = Math.max(content.scrollHeight, DESKTOP_BASE_HEIGHT);
+      const nextScale = Math.min(
+        1,
+        DESKTOP_BASE_WIDTH / contentWidth,
+        DESKTOP_BASE_HEIGHT / contentHeight,
+      );
+
+      setDesktopContentScale((prev) =>
+        Math.abs(prev - nextScale) < 0.001 ? prev : nextScale,
+      );
+    };
+
+    const scheduleMeasure = () => {
+      if (raf1) cancelAnimationFrame(raf1);
+      if (raf2) cancelAnimationFrame(raf2);
+      raf1 = requestAnimationFrame(() => {
+        updateContentScale();
+        raf2 = requestAnimationFrame(updateContentScale);
+      });
+    };
+
+    scheduleMeasure();
+    timeoutId = window.setTimeout(scheduleMeasure, 180);
+
+    window.addEventListener("resize", scheduleMeasure);
+
+    return () => {
+      if (raf1) cancelAnimationFrame(raf1);
+      if (raf2) cancelAnimationFrame(raf2);
+      window.clearTimeout(timeoutId);
+      window.removeEventListener("resize", scheduleMeasure);
+    };
+  }, [isMobile, currentSlide, viewportSize.width, viewportSize.height]);
+
   const CurrentSlideComponent = slides[currentSlide - 1] ?? Slide1;
   const desktopAvailableWidth = Math.max(1, viewportSize.width - DESKTOP_SAFE_SIDES * 2);
   const desktopAvailableHeight = Math.max(
@@ -116,6 +166,8 @@ export default function Presentation() {
   const desktopUiScale = isMobile ? 1 : desktopScale;
   const desktopStageWidth = DESKTOP_BASE_WIDTH * desktopScale;
   const desktopStageHeight = DESKTOP_BASE_HEIGHT * desktopScale;
+  const desktopContentOffsetX = ((1 - desktopContentScale) * DESKTOP_BASE_WIDTH) / 2;
+  const desktopContentOffsetY = ((1 - desktopContentScale) * DESKTOP_BASE_HEIGHT) / 2;
 
   const goToNext = () => {
     if (currentSlide < slides.length) {
@@ -171,7 +223,19 @@ export default function Presentation() {
                     transformOrigin: "top left",
                   }}
                 >
-                  <CurrentSlideComponent />
+                  <div className="desktop-slide-fit-frame">
+                    <div
+                      className="desktop-slide-fit-content"
+                      style={{
+                        width: `${DESKTOP_BASE_WIDTH}px`,
+                        height: `${DESKTOP_BASE_HEIGHT}px`,
+                        transform: `translate(${desktopContentOffsetX}px, ${desktopContentOffsetY}px) scale(${desktopContentScale})`,
+                        transformOrigin: "top left",
+                      }}
+                    >
+                      <CurrentSlideComponent />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -259,18 +323,21 @@ export default function Presentation() {
       )}
 
       {currentSlide !== 1 && !isMobile && (
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
+        <div
           className="fixed bottom-8 left-8 z-50"
           style={{
             transform: `scale(${desktopUiScale})`,
             transformOrigin: "bottom left",
           }}
         >
-          <img src={isologo} alt="ONUS Isologo" className="w-16 h-16 object-contain" />
-        </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+          >
+            <img src={isologo} alt="ONUS Isologo" className="w-16 h-16 object-contain" />
+          </motion.div>
+        </div>
       )}
     </div>
   );

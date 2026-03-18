@@ -203,6 +203,19 @@ html {
     will-change: transform;
   }
 
+  .desktop-slide-fit-frame {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .desktop-slide-fit-content {
+    position: absolute;
+    inset: 0;
+    will-change: transform;
+  }
+
   /* Fuerza composición desktop dentro del canvas escalado, sin depender de breakpoints md/lg/xl del viewport real. */
   .desktop-presentation-canvas .md\:grid-cols-2,
   .desktop-presentation-canvas .lg\:grid-cols-2 {

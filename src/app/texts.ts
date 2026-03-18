@@ -473,6 +473,6 @@ export const slide21 = {
   brandTagline: "Nos Hacemos Cargo",
   brandSeparator: " - ",
   closing: "Gracias por su atención",
-  signature: "Valentin Issler - Departamento Comercial",
+  signature: "Valentin Issler - Sales Area Manager",
 };
 

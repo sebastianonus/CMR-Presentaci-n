@@ -203,6 +203,66 @@ html {
     will-change: transform;
   }
 
+  /* Fuerza composición desktop dentro del canvas escalado, sin depender de breakpoints md/lg/xl del viewport real. */
+  .desktop-presentation-canvas .md\:grid-cols-2,
+  .desktop-presentation-canvas .lg\:grid-cols-2 {
+    @apply grid-cols-2;
+  }
+
+  .desktop-presentation-canvas .md\:grid-cols-3,
+  .desktop-presentation-canvas .lg\:grid-cols-3,
+  .desktop-presentation-canvas .xl\:grid-cols-3 {
+    @apply grid-cols-3;
+  }
+
+  .desktop-presentation-canvas .xl\:grid-cols-4 {
+    @apply grid-cols-4;
+  }
+
+  .desktop-presentation-canvas .md\:text-sm {
+    @apply text-sm;
+  }
+
+  .desktop-presentation-canvas .md\:text-base {
+    @apply text-base;
+  }
+
+  .desktop-presentation-canvas .md\:text-lg {
+    @apply text-lg;
+  }
+
+  .desktop-presentation-canvas .md\:text-xl {
+    @apply text-xl;
+  }
+
+  .desktop-presentation-canvas .md\:text-2xl {
+    @apply text-2xl;
+  }
+
+  .desktop-presentation-canvas .md\:text-3xl {
+    @apply text-3xl;
+  }
+
+  .desktop-presentation-canvas .md\:text-4xl {
+    @apply text-4xl;
+  }
+
+  .desktop-presentation-canvas .md\:text-5xl {
+    @apply text-5xl;
+  }
+
+  .desktop-presentation-canvas .md\:h-16 {
+    @apply h-16;
+  }
+
+  .desktop-presentation-canvas .md\:flex-row {
+    @apply flex-row;
+  }
+
+  .desktop-presentation-canvas .md\:items-center {
+    @apply items-center;
+  }
+
   .glass-surface-neutral {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.04));
     border: 1px solid rgba(255, 255, 255, 0.14);

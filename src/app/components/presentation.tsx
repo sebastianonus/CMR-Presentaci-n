@@ -1,5 +1,5 @@
 import { useNavigate, useParams } from "react-router";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import isologo from "../../assets/c6bba0f7d7742a6f216f288717b1e62f14e71b26.png";
@@ -58,6 +58,7 @@ export default function Presentation() {
   const isMobile = useIsMobile();
   const [viewportSize, setViewportSize] = useState(getViewportSize);
   const [desktopContentScale, setDesktopContentScale] = useState(1);
+  const desktopFitContentRef = useRef<HTMLDivElement | null>(null);
   const parsedSlide = slideNumber ? parseInt(slideNumber, 10) : 1;
   const currentSlide = Number.isFinite(parsedSlide) && parsedSlide >= 1 && parsedSlide <= slides.length ? parsedSlide : 1;
 
@@ -107,12 +108,14 @@ export default function Presentation() {
       return;
     }
 
-    const content = document.querySelector(".desktop-slide-fit-content") as HTMLElement | null;
+    const content = desktopFitContentRef.current;
     if (!content) return;
 
     let raf1 = 0;
     let raf2 = 0;
-    let timeoutId = 0;
+    let timeoutIdShort = 0;
+    let timeoutIdLong = 0;
+    let resizeObserver: ResizeObserver | undefined;
 
     const updateContentScale = () => {
       const contentWidth = Math.max(content.scrollWidth, DESKTOP_BASE_WIDTH);
@@ -138,15 +141,25 @@ export default function Presentation() {
     };
 
     scheduleMeasure();
-    timeoutId = window.setTimeout(scheduleMeasure, 180);
+    timeoutIdShort = window.setTimeout(scheduleMeasure, 180);
+    timeoutIdLong = window.setTimeout(scheduleMeasure, 700);
 
     window.addEventListener("resize", scheduleMeasure);
+    if (typeof ResizeObserver !== "undefined") {
+      resizeObserver = new ResizeObserver(scheduleMeasure);
+      resizeObserver.observe(content);
+      if (content.firstElementChild instanceof HTMLElement) {
+        resizeObserver.observe(content.firstElementChild);
+      }
+    }
 
     return () => {
       if (raf1) cancelAnimationFrame(raf1);
       if (raf2) cancelAnimationFrame(raf2);
-      window.clearTimeout(timeoutId);
+      window.clearTimeout(timeoutIdShort);
+      window.clearTimeout(timeoutIdLong);
       window.removeEventListener("resize", scheduleMeasure);
+      resizeObserver?.disconnect();
     };
   }, [isMobile, currentSlide, viewportSize.width, viewportSize.height]);
 
@@ -225,6 +238,7 @@ export default function Presentation() {
                 >
                   <div className="desktop-slide-fit-frame">
                     <div
+                      ref={desktopFitContentRef}
                       className="desktop-slide-fit-content"
                       style={{
                         width: `${DESKTOP_BASE_WIDTH}px`,

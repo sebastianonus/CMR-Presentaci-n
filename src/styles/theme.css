@@ -216,6 +216,12 @@ html {
     will-change: transform;
   }
 
+  /* Permite medir alto real de cada slide para auto-fit sin recortes. */
+  .desktop-slide-fit-content > div[class*="h-full"] {
+    height: auto !important;
+    min-height: 100%;
+  }
+
   /* Fuerza composición desktop dentro del canvas escalado, sin depender de breakpoints md/lg/xl del viewport real. */
   .desktop-presentation-canvas .md\:grid-cols-2,
   .desktop-presentation-canvas .lg\:grid-cols-2 {

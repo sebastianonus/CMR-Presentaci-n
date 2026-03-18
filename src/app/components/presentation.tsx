@@ -1,5 +1,5 @@
 import { useNavigate, useParams } from "react-router";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import isologo from "../../assets/c6bba0f7d7742a6f216f288717b1e62f14e71b26.png";
@@ -34,15 +34,29 @@ const slides = [
   Slide11, Slide12, Slide13, Slide14, Slide15, Slide16, Slide17, Slide18, Slide19, Slide20, Slide21
 ];
 
-const DESKTOP_BASE_WIDTH = 1920;
-const DESKTOP_BASE_HEIGHT = 1080;
+const DESKTOP_BASE_WIDTH = 1366;
+const DESKTOP_BASE_HEIGHT = 768;
+const DESKTOP_RESERVED_BOTTOM = 96; // Espacio para la navegación flotante.
+const DESKTOP_SAFE_TOP = 24;
+const DESKTOP_SAFE_SIDES = 32;
+
+function getViewportSize() {
+  if (typeof window === "undefined") {
+    return { width: DESKTOP_BASE_WIDTH, height: DESKTOP_BASE_HEIGHT + DESKTOP_RESERVED_BOTTOM };
+  }
+
+  const visualViewport = window.visualViewport;
+  return {
+    width: Math.round(visualViewport?.width ?? window.innerWidth),
+    height: Math.round(visualViewport?.height ?? window.innerHeight),
+  };
+}
 
 export default function Presentation() {
   const { slideNumber } = useParams();
   const navigate = useNavigate();
   const isMobile = useIsMobile();
-  const desktopShellRef = useRef<HTMLDivElement | null>(null);
-  const [desktopScale, setDesktopScale] = useState(1);
+  const [viewportSize, setViewportSize] = useState(getViewportSize);
   const parsedSlide = slideNumber ? parseInt(slideNumber, 10) : 1;
   const currentSlide = Number.isFinite(parsedSlide) && parsedSlide >= 1 && parsedSlide <= slides.length ? parsedSlide : 1;
 
@@ -62,40 +76,43 @@ export default function Presentation() {
   useEffect(() => {
     if (isMobile) return;
 
-    const shell = desktopShellRef.current;
-    if (!shell) return;
-
-    const updateScale = () => {
-      const rect = shell.getBoundingClientRect();
-      if (rect.width <= 0 || rect.height <= 0) return;
-
-      const nextScale = Math.min(
-        rect.width / DESKTOP_BASE_WIDTH,
-        rect.height / DESKTOP_BASE_HEIGHT,
-      );
-
-      setDesktopScale((prev) =>
-        Math.abs(prev - nextScale) < 0.001 ? prev : nextScale,
-      );
+    const updateViewport = () => {
+      setViewportSize((previous) => {
+        const next = getViewportSize();
+        if (previous.width === next.width && previous.height === next.height) {
+          return previous;
+        }
+        return next;
+      });
     };
 
-    updateScale();
-
-    let resizeObserver: ResizeObserver | undefined;
-    if (typeof ResizeObserver !== "undefined") {
-      resizeObserver = new ResizeObserver(updateScale);
-      resizeObserver.observe(shell);
-    }
-
-    window.addEventListener("resize", updateScale);
+    updateViewport();
+    window.addEventListener("resize", updateViewport);
+    window.addEventListener("orientationchange", updateViewport);
+    window.visualViewport?.addEventListener("resize", updateViewport);
+    window.visualViewport?.addEventListener("scroll", updateViewport);
 
     return () => {
-      resizeObserver?.disconnect();
-      window.removeEventListener("resize", updateScale);
+      window.removeEventListener("resize", updateViewport);
+      window.removeEventListener("orientationchange", updateViewport);
+      window.visualViewport?.removeEventListener("resize", updateViewport);
+      window.visualViewport?.removeEventListener("scroll", updateViewport);
     };
   }, [isMobile]);
 
   const CurrentSlideComponent = slides[currentSlide - 1] ?? Slide1;
+  const desktopAvailableWidth = Math.max(1, viewportSize.width - DESKTOP_SAFE_SIDES * 2);
+  const desktopAvailableHeight = Math.max(
+    1,
+    viewportSize.height - DESKTOP_RESERVED_BOTTOM - DESKTOP_SAFE_TOP,
+  );
+  const desktopScale = isMobile
+    ? 1
+    : Math.min(
+        1,
+        desktopAvailableWidth / DESKTOP_BASE_WIDTH,
+        desktopAvailableHeight / DESKTOP_BASE_HEIGHT,
+      );
   const desktopStageWidth = DESKTOP_BASE_WIDTH * desktopScale;
   const desktopStageHeight = DESKTOP_BASE_HEIGHT * desktopScale;
 
@@ -136,10 +153,7 @@ export default function Presentation() {
               <MobilePresentation currentSlide={currentSlide} />
             </div>
           ) : (
-            <div
-              ref={desktopShellRef}
-              className="desktop-presentation-shell absolute inset-x-0 top-0 bottom-24 overflow-hidden"
-            >
+            <div className="desktop-presentation-shell absolute inset-x-0 top-0 bottom-24 overflow-hidden">
               <div
                 className="desktop-presentation-stage"
                 style={{

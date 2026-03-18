@@ -203,21 +203,37 @@ html {
     will-change: transform;
   }
 
-  .desktop-slide-fit-frame {
-    width: 100%;
-    height: 100%;
-    position: relative;
+  .desktop-slide-safe-area {
+    position: absolute;
+    inset: 0;
     overflow: hidden;
   }
 
-  .desktop-slide-fit-content {
-    position: absolute;
-    inset: 0;
-    will-change: transform;
+  .desktop-slide-scroll {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 201, 206, 0.45) transparent;
   }
 
-  /* Permite medir alto real de cada slide para auto-fit sin recortes. */
-  .desktop-slide-fit-content > div[class*="h-full"] {
+  .desktop-slide-scroll::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  .desktop-slide-scroll::-webkit-scrollbar-thumb {
+    background: rgba(0, 201, 206, 0.4);
+    border-radius: 9999px;
+  }
+
+  .desktop-slide-scroll::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  /* Safe area: evita recorte de slides con root h-full y habilita scroll cuando excede altura. */
+  .desktop-slide-scroll > div[class*="h-full"] {
     height: auto !important;
     min-height: 100%;
   }

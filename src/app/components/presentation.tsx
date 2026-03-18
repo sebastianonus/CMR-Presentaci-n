@@ -1,5 +1,5 @@
 import { useNavigate, useParams } from "react-router";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import isologo from "../../assets/c6bba0f7d7742a6f216f288717b1e62f14e71b26.png";
@@ -39,6 +39,9 @@ const DESKTOP_BASE_HEIGHT = 768;
 const DESKTOP_RESERVED_BOTTOM = 96; // Espacio para la navegación flotante.
 const DESKTOP_SAFE_TOP = 24;
 const DESKTOP_SAFE_SIDES = 32;
+const DESKTOP_CONTENT_TOP = 20;
+const DESKTOP_CONTENT_BOTTOM = 20;
+const DESKTOP_CONTENT_SIDES = 20;
 
 function getViewportSize() {
   if (typeof window === "undefined") {
@@ -57,8 +60,6 @@ export default function Presentation() {
   const navigate = useNavigate();
   const isMobile = useIsMobile();
   const [viewportSize, setViewportSize] = useState(getViewportSize);
-  const [desktopContentScale, setDesktopContentScale] = useState(1);
-  const desktopFitContentRef = useRef<HTMLDivElement | null>(null);
   const parsedSlide = slideNumber ? parseInt(slideNumber, 10) : 1;
   const currentSlide = Number.isFinite(parsedSlide) && parsedSlide >= 1 && parsedSlide <= slides.length ? parsedSlide : 1;
 
@@ -102,67 +103,6 @@ export default function Presentation() {
     };
   }, [isMobile]);
 
-  useEffect(() => {
-    if (isMobile) {
-      setDesktopContentScale(1);
-      return;
-    }
-
-    const content = desktopFitContentRef.current;
-    if (!content) return;
-
-    let raf1 = 0;
-    let raf2 = 0;
-    let timeoutIdShort = 0;
-    let timeoutIdLong = 0;
-    let resizeObserver: ResizeObserver | undefined;
-
-    const updateContentScale = () => {
-      const contentWidth = Math.max(content.scrollWidth, DESKTOP_BASE_WIDTH);
-      const contentHeight = Math.max(content.scrollHeight, DESKTOP_BASE_HEIGHT);
-      const nextScale = Math.min(
-        1,
-        DESKTOP_BASE_WIDTH / contentWidth,
-        DESKTOP_BASE_HEIGHT / contentHeight,
-      );
-
-      setDesktopContentScale((prev) =>
-        Math.abs(prev - nextScale) < 0.001 ? prev : nextScale,
-      );
-    };
-
-    const scheduleMeasure = () => {
-      if (raf1) cancelAnimationFrame(raf1);
-      if (raf2) cancelAnimationFrame(raf2);
-      raf1 = requestAnimationFrame(() => {
-        updateContentScale();
-        raf2 = requestAnimationFrame(updateContentScale);
-      });
-    };
-
-    scheduleMeasure();
-    timeoutIdShort = window.setTimeout(scheduleMeasure, 180);
-    timeoutIdLong = window.setTimeout(scheduleMeasure, 700);
-
-    window.addEventListener("resize", scheduleMeasure);
-    if (typeof ResizeObserver !== "undefined") {
-      resizeObserver = new ResizeObserver(scheduleMeasure);
-      resizeObserver.observe(content);
-      if (content.firstElementChild instanceof HTMLElement) {
-        resizeObserver.observe(content.firstElementChild);
-      }
-    }
-
-    return () => {
-      if (raf1) cancelAnimationFrame(raf1);
-      if (raf2) cancelAnimationFrame(raf2);
-      window.clearTimeout(timeoutIdShort);
-      window.clearTimeout(timeoutIdLong);
-      window.removeEventListener("resize", scheduleMeasure);
-      resizeObserver?.disconnect();
-    };
-  }, [isMobile, currentSlide, viewportSize.width, viewportSize.height]);
-
   const CurrentSlideComponent = slides[currentSlide - 1] ?? Slide1;
   const desktopAvailableWidth = Math.max(1, viewportSize.width - DESKTOP_SAFE_SIDES * 2);
   const desktopAvailableHeight = Math.max(
@@ -179,8 +119,6 @@ export default function Presentation() {
   const desktopUiScale = isMobile ? 1 : desktopScale;
   const desktopStageWidth = DESKTOP_BASE_WIDTH * desktopScale;
   const desktopStageHeight = DESKTOP_BASE_HEIGHT * desktopScale;
-  const desktopContentOffsetX = ((1 - desktopContentScale) * DESKTOP_BASE_WIDTH) / 2;
-  const desktopContentOffsetY = ((1 - desktopContentScale) * DESKTOP_BASE_HEIGHT) / 2;
 
   const goToNext = () => {
     if (currentSlide < slides.length) {
@@ -236,17 +174,16 @@ export default function Presentation() {
                     transformOrigin: "top left",
                   }}
                 >
-                  <div className="desktop-slide-fit-frame">
-                    <div
-                      ref={desktopFitContentRef}
-                      className="desktop-slide-fit-content"
-                      style={{
-                        width: `${DESKTOP_BASE_WIDTH}px`,
-                        height: `${DESKTOP_BASE_HEIGHT}px`,
-                        transform: `translate(${desktopContentOffsetX}px, ${desktopContentOffsetY}px) scale(${desktopContentScale})`,
-                        transformOrigin: "top left",
-                      }}
-                    >
+                  <div
+                    className="desktop-slide-safe-area"
+                    style={{
+                      top: `${DESKTOP_CONTENT_TOP}px`,
+                      right: `${DESKTOP_CONTENT_SIDES}px`,
+                      bottom: `${DESKTOP_CONTENT_BOTTOM}px`,
+                      left: `${DESKTOP_CONTENT_SIDES}px`,
+                    }}
+                  >
+                    <div className="desktop-slide-scroll">
                       <CurrentSlideComponent />
                     </div>
                   </div>
